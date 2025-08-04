@@ -34,33 +34,25 @@ header nav {
   position: sticky;
   top: 0;
   z-index: 999;
-  background-color: var(--bg);
+  background-color: var(--bg); /* Белый фон */
   padding: 16px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04); /* Легкая тень */
 }
 
 nav h1 {
   margin: 0;
-  /* font-size: 1.5rem !important;*/
-  font-size: 2rem; /* Увеличим размер для выделения */
-  color: var(--text); /* Чёрный текст */
-  position: relative;
-  font-family: 'Inter', serif; /* Новый шрифт для эмблемы */
+  font-size: 2rem; /* Увеличим размер шрифта */
   font-weight: 700; /* Жирное начертание */
+  color: transparent; /* Делаем сам текст прозрачным */
+  background-image: linear-gradient(to right, rgba(34, 197, 94, 0.7), rgba(37, 99, 235, 0.7)); /* Градиент на тексте */
+  background-clip: text; /* Наложение градиента только на текст */
   display: inline-block;
-  /*background-image: linear-gradient(to right, var(--accent), var(--primary));*/
-  background-image: linear-gradient(to right, rgba(34, 197, 94, 0.7), rgba(37, 99, 235, 0.7)); /* Прозрачный градиент */
-  background-repeat: no-repeat;
-  background-size: 90% 0.35em;  /* Толщина подчеркивания */
-  background-position: 0 50%;
   white-space: normal; /* Разрешаем перенос текста */
-  line-height: 1.3; /* Межстрочный интервал */
+  line-height: 1.3;
 }
-
-
 
 nav ul {
   list-style: none;
