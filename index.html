@@ -10,53 +10,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
 
+  <!-- Подключаем стили Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Подключаем стили -->
-<link rel="stylesheet" href="styles/styles.css" /> 
+  <link rel="stylesheet" href="styles/styles.css" />
 </head>
 
 <body>
+
+  <!-- Навигация -->
   <header>
-    <nav>
-      <h1>Литература и русский</h1>
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="episodes.html">Эпизоды</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Литература и русский</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="episodes.html">Эпизоды</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <section class="intro">
+  <!-- Главный контент -->
+  <main class="container mt-4">
+    <!-- О проекте -->
+    <section class="intro mb-5">
       <h2>О проекте</h2>
-      <p>
-        <strong>«Литература и русский»</strong> — это подкаст для тех, кто хочет изучать русский язык через литературу. 
-      </p>
-      <p>
-        На этом сайте вы можете найти скрипты эпизодов, грамматические пояснения и лексические комментарии к ним.
-      </p>
+      <p><strong>«Литература и русский»</strong> — это подкаст для тех, кто хочет изучать русский язык через литературу.</p>
+      <p>На этом сайте вы можете найти скрипты эпизодов, грамматические пояснения и лексические комментарии к ним.</p>
     </section>
 
-    <section class="feedback">
-      <!--<h2>Обратная связь</h2>-->
+    <!-- Обратная связь -->
+    <section class="feedback mb-5">
       <p>Если у вас есть идеи, пожелания или вопросы, напишите мне:</p>
       <form action="https://formspree.io/f/xnnzqpjb" method="POST">
-        <textarea name="message" placeholder="Ваше сообщение..." rows="6"></textarea><br>
-        <button type="submit">Отправить</button>
+        <div class="mb-3">
+          <textarea class="form-control" name="message" placeholder="Ваше сообщение..." rows="6"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Отправить</button>
       </form>
     </section>
   </main>
 
+  <!-- Контактная информация -->
+  <section class="contact-info text-center mb-4">
+    <p>Для сотрудничества: <a href="mailto:ma.pyshechkina@gmail.com">ma.pyshechkina@gmail.com</a></p>
+    <p>Telegram: <a href="https://t.me/literaturandrusskiy" target="_blank">@literaturandrusskiy</a></p>
+  </section>
 
-<section class="contact-info">
-  <p>Для сотрудничества: <a href="mailto:ma.pyshechkina@gmail.com">ma.pyshechkina@gmail.com</a></p>
-  <p>Telegram: <a href="https://t.me/literaturandrusskiy" target="_blank">@literaturandrusskiy</a></p>
-</section>
+  <!-- Подвал -->
+  <footer class="footer bg-light py-4 text-center">
+    <p>© 2025 Литература и русский</p>
+  </footer>
 
-
-<footer class="footer">
-  <p>© 2025 Литература и русский</p>
-</footer>
+  <!-- Подключаем JS Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
