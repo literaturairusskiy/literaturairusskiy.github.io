@@ -341,7 +341,7 @@ footer {
 @media (max-width: 600px) {
   header nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 12px;
     padding: 16px;
   }
@@ -351,24 +351,24 @@ footer {
   }
 
   nav ul {
-    flex-direction: column; /* <-- Вот это ключевое */
-    align-items: flex-start;
+    flex-direction: column;
     gap: 10px;
     padding-left: 0;
+    width: 100%;
   }
 
   nav ul li {
-    width: 100%; /* Чтобы кнопки тянулись на всю ширину (опционально) */
+    width: 100%;
   }
 
   nav ul li a {
-    padding: 6px 12px;
-    font-size: 0.9rem;
-    display: inline-block;
+    display: block;          /* Заставляет ссылку вести себя как блочный элемент */
+    width: 100%;             /* Растягивается на всю ширину */
+    text-align: center;      /* Текст по центру */
+    padding: 10px 0;
+    font-size: 0.95rem;
   }
 }
-
-
 
 
 
