@@ -370,26 +370,25 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .episode-list {
-    flex-direction: column;
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
     padding: 0 16px;
   }
 
-  .episode-list li {
-    width: 100%;
-    padding: 16px;
-    text-align: left;
+  .episode-list li a {
+    font-size: 1em;
+    padding: 14px;
   }
 
-  .episode-list li a {
-    display: block;
-    width: 100%;
-    font-size: 1rem;
-    padding: 12px;
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
   }
 }
+
 
 
 
