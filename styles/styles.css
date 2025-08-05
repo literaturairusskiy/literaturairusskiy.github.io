@@ -373,29 +373,24 @@ footer {
 @media (max-width: 600px) {
   .episode-list {
     flex-direction: column;
-    align-items: stretch;
     gap: 16px;
     padding: 0 16px;
   }
 
   .episode-list li {
     width: 100%;
-    text-align: left;
     padding: 16px;
+    text-align: left;
   }
 
   .episode-list li a {
     display: block;
     width: 100%;
     font-size: 1rem;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
-    text-align: center;
-    margin-top: 16px;
+    padding: 12px;
   }
 }
+
 
 
 
