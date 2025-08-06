@@ -122,6 +122,25 @@
 а) результат<br>
 б) процесс<br>
 в) регулярно</p>
+
+        <button onclick="toggleAnswers()">Показать правильные ответы</button>
+
+  <!-- Блок с правильными ответами (по умолчанию скрыт) -->
+  <div class="answers" id="answers">
+    <p><strong>Правильные ответы:</strong></p>
+    <p>1. а<br>2. б<br>3. б<br>4. а<br>5. в</p>
+  </div>
+
+  <script>
+    function toggleAnswers() {
+      var answers = document.getElementById('answers');
+      if (answers.style.display === "none" || answers.style.display === "") {
+        answers.style.display = "block";
+      } else {
+        answers.style.display = "none";
+      }
+    }
+  </script>
 </section>
 
 
