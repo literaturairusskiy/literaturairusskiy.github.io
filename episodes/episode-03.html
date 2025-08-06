@@ -78,6 +78,52 @@
 - в деревне, в городе — населенный пункт → "в"<br>
 - мальчик у Христа на ёлке — ёлка = мероприятие → "на"</p>
     </section>
+
+    <section class="quiz-block">
+  <h2>Проверьте себя!</h2>
+
+
+    <p>1. Сейчас студенты учатся … университете.<br>
+а) в<br>
+б) на</p>
+
+<p>2. Мы гуляли … парке целый день.<br>
+a) в<br>
+б) на</p>
+
+<p>3. Моя подруга живёт … Кубе.<br>
+a) в<br>
+б) на</p>
+
+<p>4. Он работает … школе.<br>
+a) в<br>
+б) на</p>
+
+<p>5. Сегодня будет концерт … площади.<br>
+a) в<br>
+б) на</p>
+
+    
+    
+    <button onclick="toggleAnswers()">Показать правильные ответы</button>
+
+  <!-- Блок с правильными ответами (по умолчанию скрыт) -->
+  <div class="answers" id="answers">
+    <p><strong>Правильные ответы:</strong></p>
+    <p>1. б<br>2. а<br>3. б<br>4. а<br>5. б</p>
+  </div>
+
+  <script>
+    function toggleAnswers() {
+      var answers = document.getElementById('answers');
+      if (answers.style.display === "none" || answers.style.display === "") {
+        answers.style.display = "block";
+      } else {
+        answers.style.display = "none";
+      }
+    }
+  </script>
+</section>
   </main>
 
   <footer>
