@@ -203,19 +203,6 @@ section p {
   background: #fff;
 }
 
-
-/*.feedback form textarea {
-  width: 100%;
-  font-family: 'Merriweather', serif;
-  font-size: 16px;
-  padding: 12px;
-  border: 1px solid #dcd1c0;
-  border-radius: 6px;
-  resize: vertical;
-  min-height: 140px;
-}*/
-
-
 .feedback form button {
   margin-top: 14px;
   padding: 12px 24px;
