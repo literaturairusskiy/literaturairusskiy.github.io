@@ -97,6 +97,56 @@
 </p>
 
   </section>
+     <section class="quiz-block">
+  <h2>Проверьте себя!</h2>
+
+
+   <p>1. На прошлой неделе Катя устроила вечеринку в честь ... дня рождения.<br>
+а) своего<br>
+б) её<br>
+в) своего/её</p>
+
+<p>2. Я тоже хотела пригласить друзей на ... день рождения, но не успела.<br>
+а) свой<br>
+б) мой<br>
+в) свой/мой</p>
+
+<p>3. Паше на день рождения подарили машину. Говорят, что ... родители очень богатые. <br>
+а) свои<br>
+б) его<br>
+в) свои/его</p>
+
+<p>4. Мы с подругой долго выбирали, где отметить ... дни рождения.<br>
+а) свои<br>
+б) наши <br>
+в) свои/наши</p>
+
+<p>5. Обычно студенты празднуют ... день рождения в общежитии или в парке.<br>
+а) свой<br>
+б) их<br>
+в) свой/их</p>
+
+    
+    
+    <button onclick="toggleAnswers()">Показать правильные ответы</button>
+
+  <!-- Блок с правильными ответами (по умолчанию скрыт) -->
+  <div class="answers" id="answers">
+    <p><strong>Правильные ответы:</strong></p>
+    <p>1. а<br>2. в<br>3. б<br>4. в<br>5. а</p>
+  </div>
+
+  <script>
+    function toggleAnswers() {
+      var answers = document.getElementById('answers');
+      if (answers.style.display === "none" || answers.style.display === "") {
+        answers.style.display = "block";
+      } else {
+        answers.style.display = "none";
+      }
+    }
+  </script>
+</section>
   </main>
 
   <footer>
