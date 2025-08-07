@@ -116,7 +116,7 @@ section p {
 ---------------------------- */
 .podcast-links {
   margin-top: 24px;
-  text-align: left;
+  text-align: center;
 }
 
 .podcast-links p {
@@ -126,10 +126,10 @@ section p {
 }
 
 .platform-links {
-  display: inline-flex;
-  justify-content: left;
+  display: flex;
+  justify-content: center;
   gap: 20px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .platform-links a {
@@ -142,6 +142,7 @@ section p {
 .platform-links a:hover {
   text-decoration: underline;
 }
+
 
 
 /* ----------------------------
