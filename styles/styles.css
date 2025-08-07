@@ -116,7 +116,7 @@ section p {
 ---------------------------- */
 .podcast-links {
   margin-top: 24px;
-  text-align: center;
+  text-align: left;
 }
 
 .podcast-links p {
@@ -126,10 +126,10 @@ section p {
 }
 
 .platform-links {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  justify-content: left;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .platform-links a {
