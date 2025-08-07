@@ -234,6 +234,11 @@ section p {
   color: white;
 }
 
+.feedback a {
+  color: var(--primary); /* Синий цвет для ссылок */
+  text-decoration: none;
+}
+
 /* ----------------------------
    Подвал (footer)
 ---------------------------- */
