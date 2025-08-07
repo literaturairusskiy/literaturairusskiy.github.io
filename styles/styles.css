@@ -111,6 +111,38 @@ section p {
   margin-bottom: 16px; /* Добавим отступы между абзацами */
 }
 
+/* ----------------------------
+   Ссылки на подкасты
+---------------------------- */
+.podcast-links {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.podcast-links p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.platform-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.platform-links a {
+  color: var(--primary); /* Синий цвет */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.platform-links a:hover {
+  text-decoration: underline;
+}
+
 
 /* ----------------------------
    Список эпизодов — карточки
