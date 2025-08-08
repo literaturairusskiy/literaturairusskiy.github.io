@@ -118,24 +118,8 @@ section p {
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px;
-  color: white;
+  color: black;
   text-align: center;
-}
-
-.intro::before {
-  content: ''; /* Создаём пустой псевдоэлемент */
-  position: absolute; /* Абсолютное позиционирование относительно родительского контейнера */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
-  z-index: 1; /* Псевдоэлемент будет поверх картинки */
-}
-
-.intro > * {
-  position: relative;
-  z-index: 2; /* Все другие элементы в блоке будут выше псевдоэлемента */
 }
 
 
