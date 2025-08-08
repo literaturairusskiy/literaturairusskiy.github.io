@@ -226,6 +226,47 @@ section p {
   text-decoration: none;
 }
 
+/* ----------------------------
+   Форма для пробного урока
+---------------------------- */
+#trial-lesson form input, #trial-lesson form textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 14px;
+  border: 1px solid var(--border); /* Цвет рамки */
+  border-radius: 10px;
+  background: #fff;
+}
+
+#trial-lesson form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+#trial-lesson form button {
+  margin-top: 14px;
+  padding: 12px 24px;
+  background-color: transparent;
+  color: var(--accent); /* Цвет текста */
+  border: 2px solid var(--accent); /* Цвет границы */
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#trial-lesson form button:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+#trial-lesson a {
+  color: var(--primary); /* Синий цвет для ссылок */
+  text-decoration: none;
+}
+
 
 /* ----------------------------
    Подвал (footer)
