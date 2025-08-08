@@ -111,6 +111,17 @@ section p {
   margin-bottom: 16px; /* Добавим отступы между абзацами */
 }
 
+.intro {
+  background-image: url('https://raw.githubusercontent.com/literaturairusskiy/literaturairusskiy.github.io/refs/heads/main/images/IMG_6931%202.heic');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px;
+  color: white;
+  text-align: center;
+}
+
+
 /* ----------------------------
    Ссылки на подкасты
 ---------------------------- */
