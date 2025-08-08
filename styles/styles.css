@@ -226,6 +226,56 @@ section p {
   text-decoration: none;
 }
 
+/* Стили для формы */
+
+#trial-lesson {
+  background-color: #f9fafb; /* Светлый фон */
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+#trial-lesson h2 {
+  font-size: 1.5rem; /* Уменьшенный размер текста для заголовка */
+  color: #111827; /* Темный текст */
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#trial-lesson form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Отступы между элементами формы */
+}
+
+#trial-lesson label {
+  font-weight: bold;
+  color: #111827;
+}
+
+#trial-lesson input, #trial-lesson textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+#trial-lesson input::placeholder, #trial-lesson textarea::placeholder {
+  color: #9ca3af;
+}
+
+#trial-lesson button {
+  padding: 14px;
+  background-color: #3b82f6; /* Синий фон */
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border
+
+
 /* ----------------------------
    Подвал (footer)
 ---------------------------- */
