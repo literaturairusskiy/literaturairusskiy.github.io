@@ -112,6 +112,7 @@ section p {
 }
 
 .intro {
+  position: relative; /* Чтобы псевдоэлемент был относительно этого блока */
   background-image: url('https://raw.githubusercontent.com/literaturairusskiy/literaturairusskiy.github.io/refs/heads/main/images/IMG_6931%202.heic');
   background-size: cover;
   background-position: center;
@@ -121,8 +122,20 @@ section p {
   text-align: center;
 }
 
-.intro img {
-  opacity: 0.5; /* Полупрозрачное изображение */
+.intro::before {
+  content: ''; /* Создаём пустой псевдоэлемент */
+  position: absolute; /* Абсолютное позиционирование относительно родительского контейнера */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  z-index: 1; /* Псевдоэлемент будет поверх картинки */
+}
+
+.intro > * {
+  position: relative;
+  z-index: 2; /* Все другие элементы в блоке будут выше псевдоэлемента */
 }
 
 
