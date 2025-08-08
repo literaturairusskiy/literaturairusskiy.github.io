@@ -37,38 +37,16 @@
       </p>
     </section>
 
-    <section class="feedback">
-      <!--<h2>Обратная связь</h2>-->
-      <p>Если у вас есть идеи, пожелания или вопросы, пишите мне на <a href="mailto:ma.pyshechkina@gmail.com">ma.pyshechkina@gmail.com</a> или анонимно:</p> 
-      <form action="https://formspree.io/f/xnnzqpjb" method="POST">
-        <textarea name="message" placeholder="Ваше сообщение..." rows="6"></textarea><br>
-        <button type="submit">Отправить</button>
-      </form>
-    </section>
-  </main>
+ <section class="feedback">
+  <p> Идеи, пожелания, вопросы, <strong> пробный урок</strong> –– напишите мне на <a href="mailto:ma.pyshechkina@gmail.com">ma.pyshechkina@gmail.com</a> или анонимно:</p> 
+  <form action="https://formspree.io/f/xnnzqpjb" method="POST">
+    <label for="email">Ваш Email:</label>
+    <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
 
-  <section id="trial-lesson" class="py-16 px-4 max-w-3xl mx-auto">
-  <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Записаться на пробный урок (Sign up for a trial lesson)</h2>
+    <label for="message">Ваше сообщение:</label>
+    <textarea id="message" name="message" placeholder="Ваше сообщение..." rows="6" required></textarea><br>
 
-  <form action="https://formspree.io/f/xldlokdn" method="POST" class="space-y-6">
-    <div>
-      <label class="block font-semibold mb-1">Ваше имя (Your name):</label>
-      <input type="text" name="name" required class="w-full border rounded px-4 py-2" placeholder="Введите ваше имя / Your name">
-    </div>
-
-    <div>
-      <label class="block font-semibold mb-1">Email:</label>
-      <input type="email" name="email" required class="w-full border rounded px-4 py-2" placeholder="Введите вашу почту / Your email">
-    </div>
-
-    <div>
-      <label class="block font-semibold mb-1">Пожелания (Your wishes):</label>
-      <textarea name="message" class="w-full border rounded px-4 py-2 min-h-[100px]" placeholder="Ваши пожелания / Your wishes"></textarea>
-    </div>
-
-    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded w-full">
-      Отправить (Submit)
-    </button>
+    <button type="submit">Отправить</button>
   </form>
 </section>
 
