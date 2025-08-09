@@ -118,8 +118,6 @@ section p {
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px;
-  color: black;
-  text-align: center;
 }
 
 .intro h2,
@@ -128,6 +126,7 @@ section p {
   color: black; /* Белый текст */
   display: inline; /* Чтобы фон шёл как за маркером */
   padding: 0 4px; /* Небольшой отступ вокруг текста */
+  text-align: center;
 }
 
 
