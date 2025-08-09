@@ -118,13 +118,16 @@ section p {
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px;
-  color: white;
+  color: black;
   text-align: center;
+  background-color: white; /* Чёрный фон */
+  display: inline; /* Чтобы фон шёл как за маркером */
+  padding: 0 4px; /* Небольшой отступ вокруг текста */
 }
 
 .intro h2 {
-  background-color: black; /* Чёрный фон */
-  color: white; /* Белый текст */
+  background-color: white; /* Чёрный фон */
+  color: black; /* Белый текст */
   display: inline; /* Чтобы фон шёл как за маркером */
   padding: 0 4px; /* Небольшой отступ вокруг текста */
 }
