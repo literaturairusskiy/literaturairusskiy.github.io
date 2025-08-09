@@ -123,8 +123,10 @@ section p {
 }
 
 .intro h2 {
-  color: white;
-  box-shadow: inset 0 -0.4em 0 rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6); /* Чёрный полупрозрачный фон */
+  display: inline-block; /* Чтобы фон был только за текстом */
+  padding: 6px 12px; /* Немного отступов вокруг текста */
+  border-radius: 4px; /* Чуть скругляем углы */
 }
 
 
