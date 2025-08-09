@@ -124,8 +124,8 @@ section p {
 
 .intro h2,
 .intro p {
-  background-color: black; /* Чёрный фон */
-  color: white; /* Белый текст */
+  background-color: white; /* Чёрный фон */
+  color: black; /* Белый текст */
   display: inline; /* Чтобы фон шёл как за маркером */
   padding: 0 4px; /* Небольшой отступ вокруг текста */
 }
