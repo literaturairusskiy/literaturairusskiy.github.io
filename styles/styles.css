@@ -287,14 +287,6 @@ section p {
 /* ----------------------------
    Подвал (footer)
 ---------------------------- */
-/*footer {
-  background-color: var(--bg);
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: var(--secondary);
-  border-top: 1px solid #e5e7eb;
-}*/
 
 footer {
   background-color: #f9fafb; /* Светло-серый фон */
@@ -302,6 +294,7 @@ footer {
   padding: 20px;
   text-align: center;
   font-size: 1rem;
+  border-top: none; 
 }
 
 .contact-info {
