@@ -9,8 +9,8 @@
 :root {
   --bg: #ffffff;
   --text: #111827;
-  --primary: #2563eb;       /* Синий */
-  --accent: #22c55e;        /* Зелёный */
+  --primary: #4285f4;       /* Синий */
+  --accent: #34a853;        /* Зелёный */
   --secondary: #6b7280;
   --hover: #f3f4f6;
   --light-green: #ecfdf5;
