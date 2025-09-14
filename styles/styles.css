@@ -483,8 +483,27 @@ footer {
   }
 
   .menu-toggle {
-    display: block; /* Показываем "три точки" */
-  }
+  display: none;
+  font-size: 32px;             /* Сделаем крупнее */
+  cursor: pointer;
+  user-select: none;
+  color: var(--primary);       /* Синий цвет из переменных */
+  border: 2px solid var(--primary);
+  border-radius: 50%;          /* Делаем кружок */
+  width: 48px;                 /* Размер кнопки */
+  height: 48px;
+  display: flex;               /* Центрируем точки */
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background-color: var(--primary); /* При наведении — синий фон */
+  color: #fff;                      /* А точки белые */
+}
+
 
   /* Когда активно */
   .navbar.active ul {
