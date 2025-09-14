@@ -484,26 +484,12 @@ footer {
 
   .menu-toggle {
   display: none;
-  font-size: 32px;             /* Сделаем крупнее */
+  font-size: 40px;         /* увеличиваем размер */
+  font-weight: 900;        /* делаем жирнее */
   cursor: pointer;
+  color: var(--primary);   /* твой синий */
   user-select: none;
-  color: var(--primary);       /* Синий цвет из переменных */
-  border: 2px solid var(--primary);
-  border-radius: 50%;          /* Делаем кружок */
-  width: 48px;                 /* Размер кнопки */
-  height: 48px;
-  display: flex;               /* Центрируем точки */
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  transition: all 0.3s ease;
 }
-
-.menu-toggle:hover {
-  background-color: var(--primary); /* При наведении — синий фон */
-  color: #fff;                      /* А точки белые */
-}
-
 
   /* Когда активно */
   .navbar.active ul {
