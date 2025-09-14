@@ -62,16 +62,16 @@ nav ul {
   padding: 0;
 }
 
-nav ul li a {
+nav ul li a{
   text-decoration: none;
   color: var(--primary);
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
   background-color: transparent;
   border: 2px solid var(--primary);
-  transition: background-color 0.2s, color 0.2s;
+  transition: all 0.3s;
 }
+
 
 nav ul li a:hover {
   background-color: var(--primary);
@@ -464,7 +464,33 @@ footer {
   }
 }
 
+/* Кнопка по умолчанию скрыта */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
 
+/* На мобильных */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none; /* Прячем меню */
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+  }
+
+  .menu-toggle {
+    display: block; /* Показываем "три точки" */
+  }
+
+  /* Когда активно */
+  .navbar.active ul {
+    display: flex;
+  }
+}
 
 
 
