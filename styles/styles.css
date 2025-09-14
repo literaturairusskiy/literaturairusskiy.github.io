@@ -464,7 +464,7 @@ footer {
   }
 }
 
-/* Кнопка по умолчанию скрыта */
+/* Кнопка по умолчанию скрыта (на десктопе) */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -472,7 +472,7 @@ footer {
   user-select: none;
 }
 
-/* На мобильных */
+/* На мобильных показываем */
 @media (max-width: 768px) {
   .navbar ul {
     display: none; /* Прячем меню */
@@ -483,19 +483,20 @@ footer {
   }
 
   .menu-toggle {
-  display: none;
-  font-size: 40px;         /* увеличиваем размер */
-  font-weight: 900;        /* делаем жирнее */
-  cursor: pointer;
-  color: var(--primary);   /* твой синий */
-  user-select: none;
-}
+    display: block;           /* теперь видно */
+    font-size: 40px;          /* увеличиваем размер */
+    font-weight: 900;         /* делаем жирнее */
+    cursor: pointer;
+    color: var(--primary);    /* синий */
+    user-select: none;
+  }
 
   /* Когда активно */
   .navbar.active ul {
     display: flex;
   }
 }
+
 
 
 
