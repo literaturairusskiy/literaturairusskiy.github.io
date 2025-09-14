@@ -22,13 +22,22 @@
 </head>
 
 <body>
- <header>
+<header>
   <nav class="nav-container">
     <h1 class="logo">Литература и русский</h1>
-    <ul class="menu">
-      <li><a href="https://literaturairusskiy.github.io/">Главная</a></li>
-      <li><a href="episodes.html">Эпизоды</a></li>
-    </ul>
+
+    <!-- Кнопка меню (три точки) -->
+    <div class="menu-toggle" id="menu-toggle">&#x22EE;</div>
+
+    <!-- Меню -->
+    <div class="navbar" id="navbar">
+      <ul>
+        <li><a href="https://literaturairusskiy.github.io/">Главная страница</a></li>
+        <li><a href="episodes.html">Скрипты</a></li>
+        <li><a href="#">Магазин </a></li>
+        <li><a href="#">Методика</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
 
@@ -71,5 +80,10 @@
     <p>© 2025 Литература и русский</p>
   </footer>
   </script>
+    <script>
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.getElementById('navbar').classList.toggle('active');
+  });
+</script>
 </body>
 </html>
