@@ -590,7 +590,38 @@ footer {
 .examples-table td {
   background: #fff;
 }
+/* ----------------------------
+   Секция "Cсылки в блоге"
+---------------------------- */
+.blog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.blog-list li {
+  margin-bottom: 20px;
+}
+
+.blog-list a {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
+}
+
+.blog-list a:hover {
+  background-color: var(--light-green);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
 
 
 
