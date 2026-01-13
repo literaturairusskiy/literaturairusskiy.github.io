@@ -7,6 +7,10 @@
   <url>
     <loc>https://literaturairusskiy.github.io/episodes.html</loc>
     <priority>0.80</priority>
+    <url>
+    <loc>https://literaturairusskiy.github.io/blog.html</loc>
+    <priority>0.80</priority>
+  </url>
   </url>
 </urlset>
 
