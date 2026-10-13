@@ -1,1 +1,508 @@
 
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Упражнения по русскому языку</title>
+
+<style>
+:root {
+  --bg: #f4f3e8;
+  --paper: #fffef9;
+  --green: #64775a;
+  --green-light: #e8eddf;
+  --text: #30332c;
+  --muted: #73766b;
+  --line: #dedfd3;
+  --beige: #f2eadb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 28px 18px 60px;
+}
+
+header {
+  padding: 35px;
+  background: var(--green-light);
+  border-radius: 22px;
+  margin-bottom: 28px;
+}
+
+header p {
+  color: var(--muted);
+}
+
+.eyebrow {
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1, h2 {
+  font-family: Georgia, serif;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 44px);
+  margin: 8px 0;
+}
+
+h2 {
+  font-size: 27px;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 19px;
+  margin: 25px 0 12px;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 25px;
+}
+
+.example {
+  background: var(--beige);
+  border-left: 4px solid #b99b6c;
+  padding: 13px 17px;
+  border-radius: 7px;
+  margin: 20px 0;
+}
+
+.example strong {
+  color: #705a38;
+}
+
+.task {
+  list-style: none;
+  counter-reset: item;
+  padding: 0;
+  margin: 0;
+}
+
+.task li {
+  counter-increment: item;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 8px;
+  padding: 13px 0;
+  border-bottom: 1px solid #ecece4;
+}
+
+.task li:last-child {
+  border-bottom: none;
+}
+
+.task li::before {
+  content: counter(item) ".";
+  color: var(--green);
+  font-weight: bold;
+}
+
+.answer-line {
+  display: block;
+  height: 25px;
+  border-bottom: 1px solid #bfc4b7;
+  margin: 4px 0 5px;
+  max-width: 540px;
+}
+
+.gender {
+  margin: 22px 0;
+  padding: 18px;
+  background: #f8f8f1;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.gender h3 {
+  margin: 0 0 12px;
+  color: var(--green);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 460px;
+}
+
+th, td {
+  text-align: left;
+  padding: 11px 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  background: var(--green-light);
+  color: #394532;
+  font-size: 14px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background: #fcfcf8;
+}
+
+.ending {
+  color: var(--green);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+details {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #f4f5ed;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 20px;
+  margin-top: 15px;
+}
+
+.answers p {
+  margin: 3px 0;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 14px 10px 35px;
+  }
+
+  header, .card {
+    padding: 20px 16px;
+    border-radius: 15px;
+  }
+
+  .answers {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  header, .card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  details:not([open]) > *:not(summary) {
+    display: block;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+<header>
+  <div class="eyebrow">Русский язык как иностранный</div>
+  <h1>Упражнения</h1>
+  <p>Числительные, существительные и предложный падеж.</p>
+</header>
+
+<!-- УПРАЖНЕНИЕ 1 -->
+
+<section class="card">
+  <h2>01. Числительные и существительные</h2>
+
+  <p><strong>Задание.</strong> Напишите числительное и существительное словами.</p>
+
+  <div class="example">
+    <strong>Пример:</strong>
+    2 (минута, минуты, минут) → <b>две минуты</b>
+  </div>
+
+  <ol class="task">
+    <li><div>1 (буква, буквы, букв)<span class="answer-line"></span></div></li>
+    <li><div>2 (буква, буквы, букв)<span class="answer-line"></span></div></li>
+    <li><div>5 (буква, буквы, букв)<span class="answer-line"></span></div></li>
+    <li><div>3 (минута, минуты, минут)<span class="answer-line"></span></div></li>
+    <li><div>1 (минута, минуты, минут)<span class="answer-line"></span></div></li>
+    <li><div>7 (минута, минуты, минут)<span class="answer-line"></span></div></li>
+    <li><div>2 (рубль, рубля, рублей)<span class="answer-line"></span></div></li>
+    <li><div>1 (рубль, рубля, рублей)<span class="answer-line"></span></div></li>
+    <li><div>10 (рубль, рубля, рублей)<span class="answer-line"></span></div></li>
+    <li><div>4 (буква, буквы, букв)<span class="answer-line"></span></div></li>
+    <li><div>3 (рубль, рубля, рублей)<span class="answer-line"></span></div></li>
+    <li><div>6 (минута, минуты, минут)<span class="answer-line"></span></div></li>
+    <li><div>21 (рубль, рубля, рублей)<span class="answer-line"></span></div></li>
+    <li><div>22 (минута, минуты, минут)<span class="answer-line"></span></div></li>
+    <li><div>33 (буква, буквы, букв)<span class="answer-line"></span></div></li>
+  </ol>
+
+  <details>
+    <summary>Показать ответы</summary>
+    <div class="answers">
+      <p>1. одна буква</p>
+      <p>2. две буквы</p>
+      <p>3. пять букв</p>
+      <p>4. три минуты</p>
+      <p>5. одна минута</p>
+      <p>6. семь минут</p>
+      <p>7. два рубля</p>
+      <p>8. один рубль</p>
+      <p>9. десять рублей</p>
+      <p>10. четыре буквы</p>
+      <p>11. три рубля</p>
+      <p>12. шесть минут</p>
+      <p>13. двадцать один рубль</p>
+      <p>14. двадцать две минуты</p>
+      <p>15. тридцать три буквы</p>
+    </div>
+  </details>
+</section>
+
+<!-- ТАБЛИЦЫ П6 -->
+
+<section class="card">
+  <h2>02. Предложный падеж (П6)</h2>
+  <p><strong>Вопросы:</strong> где? в чём? на чём? о ком? о чём?</p>
+
+  <h3>Существительные</h3>
+
+  <div class="gender">
+    <h3>ОН · мужской род</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Окончание</th><th>П1</th><th>П6</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="ending">согласный → -е</td><td>стол</td><td>на столе</td></tr>
+          <tr><td class="ending">согласный → -е</td><td>университет</td><td>в университете</td></tr>
+          <tr><td class="ending">-й → -е</td><td>музей</td><td>в музее</td></tr>
+          <tr><td class="ending">-ий → -ии</td><td>санаторий</td><td>в санатории</td></tr>
+          <tr><td class="ending">-ь → -е</td><td>словарь</td><td>в словаре</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="gender">
+    <h3>ОНА · женский род</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Окончание</th><th>П1</th><th>П6</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="ending">-а → -е</td><td>мама</td><td>о маме</td></tr>
+          <tr><td class="ending">-а → -е</td><td>комната</td><td>в комнате</td></tr>
+          <tr><td class="ending">-я → -е</td><td>неделя</td><td>на неделе</td></tr>
+          <tr><td class="ending">-ия → -ии</td><td>лекция</td><td>на лекции</td></tr>
+          <tr><td class="ending">-ь → -и</td><td>тетрадь</td><td>в тетради</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="gender">
+    <h3>ОНО · средний род</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Окончание</th><th>П1</th><th>П6</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="ending">-о → -е</td><td>окно</td><td>на окне</td></tr>
+          <tr><td class="ending">-о → -е</td><td>слово</td><td>в слове</td></tr>
+          <tr><td class="ending">-е → -е</td><td>море</td><td>на море</td></tr>
+          <tr><td class="ending">-ие → -ии</td><td>здание</td><td>в здании</td></tr>
+          <tr><td class="ending">-ие → -ии</td><td>общежитие</td><td>в общежитии</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="gender">
+    <h3>ОНИ · множественное число</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Окончание</th><th>П1</th><th>П6</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="ending">-ы → -ах</td><td>столы</td><td>на столах</td></tr>
+          <tr><td class="ending">-и → -ах</td><td>книги</td><td>в книгах</td></tr>
+          <tr><td class="ending">-и → -ях</td><td>музеи</td><td>в музеях</td></tr>
+          <tr><td class="ending">-и → -ях</td><td>тетради</td><td>в тетрадях</td></tr>
+          <tr><td class="ending">-а → -ах</td><td>города</td><td>в городах</td></tr>
+          <tr><td class="ending">-и → -ях</td><td>лекции</td><td>на лекциях</td></tr>
+          <tr><td class="ending">-и → -ях</td><td>станции</td><td>на станциях</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3>Прилагательные</h3>
+
+  <div class="gender">
+    <h3>ОН · мужской род</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Окончание</th><th>П1</th><th>П6</th></tr></thead>
+        <tbody>
+          <tr><td class="ending">-ый → -ом</td><td>новый стол</td><td>на новом столе</td></tr>
+          <tr><td class="ending">-ой → -ом</td><td>большой музей</td><td>в большом музее</td></tr>
+          <tr><td class="ending">-ий → -ем</td><td>синий диван</td><td>на синем диване</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="gender">
+    <h3>ОНА · женский род</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Окончание</th><th>П1</th><th>П6</th></tr></thead>
+        <tbody>
+          <tr><td class="ending">-ая → -ой</td><td>новая книга</td><td>о новой книге</td></tr>
+          <tr><td class="ending">-ая → -ой</td><td>большая комната</td><td>в большой комнате</td></tr>
+          <tr><td class="ending">-яя → -ей</td><td>синяя тетрадь</td><td>в синей тетради</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="gender">
+    <h3>ОНО · средний род</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Окончание</th><th>П1</th><th>П6</th></tr></thead>
+        <tbody>
+          <tr><td class="ending">-ое → -ом</td><td>новое окно</td><td>в новом окне</td></tr>
+          <tr><td class="ending">-ое → -ом</td><td>большое здание</td><td>в большом здании</td></tr>
+          <tr><td class="ending">-ее → -ем</td><td>синее море</td><td>на синем море</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="gender">
+    <h3>ОНИ · множественное число</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Окончание</th><th>П1</th><th>П6</th></tr></thead>
+        <tbody>
+          <tr><td class="ending">-ые → -ых</td><td>новые книги</td><td>в новых книгах</td></tr>
+          <tr><td class="ending">-ие → -их</td><td>большие музеи</td><td>в больших музеях</td></tr>
+          <tr><td class="ending">-ие → -их</td><td>синие тетради</td><td>в синих тетрадях</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- УПРАЖНЕНИЕ 3 -->
+
+<section class="card">
+  <h2>03. Практика: предложный падеж</h2>
+  <p><strong>Задание.</strong> Раскройте скобки, поставив существительные и прилагательные в правильную форму.</p>
+
+  <ol class="task">
+    <li><div>Я учусь в (новый университет).<span class="answer-line"></span></div></li>
+    <li><div>Мы говорим о (интересная книга).<span class="answer-line"></span></div></li>
+    <li><div>Моя подруга живёт в (большой город).<span class="answer-line"></span></div></li>
+    <li><div>Студенты сидят в (светлая аудитория).<span class="answer-line"></span></div></li>
+    <li><div>Мы отдыхаем на (синее море).<span class="answer-line"></span></div></li>
+    <li><div>Преподаватель рассказывает о (русская литература).<span class="answer-line"></span></div></li>
+    <li><div>Я часто думаю о (старший брат).<span class="answer-line"></span></div></li>
+    <li><div>Дети играют в (зелёный парк).<span class="answer-line"></span></div></li>
+    <li><div>Мы говорим о (новые фильмы).<span class="answer-line"></span></div></li>
+    <li><div>Мои документы лежат в (чёрная сумка).<span class="answer-line"></span></div></li>
+    <li><div>Он работает в (международная компания).<span class="answer-line"></span></div></li>
+    <li><div>Мы гуляем в (красивый парк).<span class="answer-line"></span></div></li>
+    <li><div>Студенты занимаются в (современное общежитие).<span class="answer-line"></span></div></li>
+    <li><div>Она рассказывает о (последняя поездка).<span class="answer-line"></span></div></li>
+    <li><div>Я живу в (маленькая квартира).<span class="answer-line"></span></div></li>
+  </ol>
+
+  <details>
+    <summary>Показать ответы</summary>
+    <div class="answers">
+      <p>1. в новом университете</p>
+      <p>2. об интересной книге</p>
+      <p>3. в большом городе</p>
+      <p>4. в светлой аудитории</p>
+      <p>5. на синем море</p>
+      <p>6. о русской литературе</p>
+      <p>7. о старшем брате</p>
+      <p>8. в зелёном парке</p>
+      <p>9. о новых фильмах</p>
+      <p>10. в чёрной сумке</p>
+      <p>11. в международной компании</p>
+      <p>12. в красивом парке</p>
+      <p>13. в современном общежитии</p>
+      <p>14. о последней поездке</p>
+      <p>15. в маленькой квартире</p>
+    </div>
+  </details>
+</section>
+
+<p class="note">Материал для занятий по русскому языку как иностранному.</p>
+
+</main>
+</body>
+</html>
