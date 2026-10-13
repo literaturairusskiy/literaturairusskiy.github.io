@@ -1,1 +1,297 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Упражнения по русскому языку как иностранному: грамматика, лексика и фонетика."
+  >
+
+  <title>Упражнения — Литература и русский</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --background: #f4f3e8;
+      --text: #292820;
+      --muted: #777568;
+      --accent: #65735b;
+      --accent-hover: #4e5b46;
+      --border: #dedccf;
+      --card: #faf9f2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: 'Roboto Slab', serif;
+      font-size: 27px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -1px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 65px 32px 90px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 54px);
+      letter-spacing: -1px;
+      margin: 0 0 20px;
+    }
+
+    .intro {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 45px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin: 0 0 24px;
+    }
+
+    .exercise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .exercise-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .exercise-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .category {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .exercise-card h3 {
+      font-size: 20px;
+      margin: 0 0 12px;
+    }
+
+    .exercise-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 22px;
+      flex-grow: 1;
+    }
+
+    .exercise-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: auto;
+    }
+
+    .exercise-link:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    .empty-note {
+      margin-top: 35px;
+      padding: 25px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+      .exercise-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 550px) {
+      header {
+        padding: 20px;
+      }
+
+      main {
+        padding: 45px 20px 65px;
+      }
+
+      .exercise-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="index.html">ЛиР</a>
+
+    <nav>
+      <a href="index.html">Главная ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="eyebrow">Литература и русский</div>
+
+    <h1>Упражнения</h1>
+
+    <p class="intro">
+      Здесь вы найдёте практические задания для изучения русского языка
+      как иностранного. Выбирайте тему, выполняйте упражнения и возвращайтесь
+      к ним, когда захотите повторить материал.
+    </p>
+
+    <h2 class="section-title">Все задания</h2>
+
+    <div class="exercise-grid">
+
+      <!-- УПРАЖНЕНИЕ 1 -->
+      <article class="exercise-card">
+        <div class="category">Фонетика · A1</div>
+        <h3>Русские гласные</h3>
+        <p>
+          Учимся различать русские гласные и правильно читать простые слова.
+        </p>
+        <a class="exercise-link" href="ссылка-на-упражнение-1">
+          Перейти к упражнению →
+        </a>
+      </article>
+
+      <!-- УПРАЖНЕНИЕ 2 -->
+      <article class="exercise-card">
+        <div class="category">Грамматика · A1–A2</div>
+        <h3>Предложный падеж</h3>
+        <p>
+          Тренируем формы существительных и употребление предлогов «в» и «на».
+        </p>
+        <a class="exercise-link" href="ссылка-на-упражнение-2">
+          Перейти к упражнению →
+        </a>
+      </article>
+
+      <!-- УПРАЖНЕНИЕ 3 -->
+      <article class="exercise-card">
+        <div class="category">Грамматика · A2–B1</div>
+        <h3>Глаголы движения</h3>
+        <p>
+          Практикуемся выбирать подходящие глаголы в разных ситуациях.
+        </p>
+        <a class="exercise-link" href="ссылка-на-упражнение-3">
+          Перейти к упражнению →
+        </a>
+      </article>
+
+      <!-- СКОПИРУЙ ЭТОТ БЛОК, ЧТОБЫ ДОБАВИТЬ НОВОЕ УПРАЖНЕНИЕ -->
+      <article class="exercise-card">
+        <div class="category">Категория · Уровень</div>
+        <h3>Название упражнения</h3>
+        <p>
+          Краткое описание: чему посвящено упражнение и что вы будете тренировать.
+        </p>
+        <a class="exercise-link" href="вставь-ссылку-сюда">
+          Перейти к упражнению →
+        </a>
+      </article>
+
+    </div>
+
+    <div class="empty-note">
+      Новые упражнения будут появляться здесь. Заглядывайте снова!
+    </div>
+
+  </main>
+
+  <footer>
+    © Литература и русский · ЛиР
+  </footer>
+
+</body>
+</html>
+```
