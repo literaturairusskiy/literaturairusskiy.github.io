@@ -1,316 +1,443 @@
-
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Повторяем лексику</title>
+<title>ЛЕКСИКА И ГРАММАТИКА</title>
+
 <style>
-:root {
-  --bg: #f7f5ed;
-  --ink: #252b28;
-  --muted: #68716a;
-  --green: #dce9d9;
-  --green-dark: #315e45;
-  --pink: #f4dfe0;
-  --line: #e5e2d7;
+* {
+  box-sizing: border-box;
 }
-* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  padding: 22px 14px 36px;
-  background: radial-gradient(ellipse at 10% 0%,#e6eddf,transparent 35%),var(--bg);
-  color: var(--ink);
-  font-family: system-ui, -apple-system, sans-serif;
+  padding: 24px 16px 40px;
+  background: #f4f3e8;
+  color: #292923;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
-.app { max-width: 850px; margin: auto; }
-header { text-align: center; margin: 10px 0 25px; }
-.eyebrow {
-  display: inline-block; padding: 7px 12px; border-radius: 30px;
-  background: #fffaf0; border: 1px solid var(--line);
-  color: #7c6941; font-size: 11px; font-weight: 800; letter-spacing: .1em;
+
+main {
+  max-width: 850px;
+  margin: 0 auto;
 }
-h1 { font-size: clamp(29px,5vw,44px); margin: 14px 0 8px; letter-spacing: -.04em; }
-h1 span { color: #52785a; }
-.subtitle { color: var(--muted); font-size: 14px; line-height: 1.6; }
-.tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 22px 0 17px; }
-.tab, button, select { font: inherit; cursor: pointer; }
-.tab {
-  border: 1px solid var(--line); background: white; border-radius: 12px;
-  padding: 11px 14px; font-size: 13px; font-weight: 800;
+
+h1 {
+  font-size: clamp(25px, 4vw, 34px);
+  line-height: 1.25;
+  margin: 0 0 28px;
+  letter-spacing: 0.03em;
 }
-.tab.active, .primary { background: var(--ink); color: white; }
-.panel {
-  background: rgba(255,255,255,.8); border: 1px solid var(--line);
-  border-radius: 22px; padding: clamp(16px,3vw,26px);
+
+h2 {
+  font-size: 20px;
+  margin: 0 0 22px;
 }
-.hidden { display: none !important; }
-h2 { font-size: 20px; margin: 0 0 7px; }
-.hint { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0 0 18px; }
-.toolbar { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; }
-.progress-wrap { flex: 1; }
-.progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 7px; }
-.progress { height: 8px; background: #e7e3d7; border-radius: 10px; overflow: hidden; }
-.bar { height: 100%; background: #65956e; width: 0; transition: width .25s; }
-.action { border: 0; border-radius: 11px; padding: 11px 15px; font-size: 13px; font-weight: 800; }
-.primary { background: var(--ink); color: white; }
-.secondary { background: white; border: 1px solid var(--line); color: var(--ink); }
+
+.section {
+  background: #fffef9;
+  border: 1px solid #d9d7c8;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
 .question {
-  padding: 20px; border-radius: 17px; background: #f5f0e2;
-  border: 1px solid #e9dfc7; margin-bottom: 15px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e9e7dc;
 }
-.qnumber { font-size: 11px; color: #8a784e; font-weight: 850; text-transform: uppercase; margin-bottom: 9px; }
-.prompt { font-size: clamp(17px,3vw,21px); font-weight: 800; line-height: 1.5; }
-.options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.question:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.question p {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.options {
+  display: grid;
+  gap: 7px;
+}
+
 .option {
-  background: white; border: 1.5px solid var(--line); border-radius: 13px;
-  padding: 13px 10px; font-size: 14px; font-weight: 750; line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
 }
-.option:hover { border-color: #8cab91; }
-.option.correct { background: #e7f2e6; border-color: #77a783; color: #327047; }
-.option.wrong { background: #fff0ed; border-color: #d8897e; color: #a34e42; }
-.option:disabled { cursor: default; }
-.feedback { min-height: 28px; text-align: center; font-size: 13px; font-weight: 750; line-height: 1.5; margin: 15px 0 5px; }
-.good { color: #327047; }
-.bad { color: #a34e42; }
-.actions { display: flex; justify-content: center; gap: 9px; flex-wrap: wrap; margin-top: 12px; }
-.pairs { display: flex; flex-direction: column; gap: 9px; }
-.pair-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-  align-items: center; padding: 11px; border: 1px solid var(--line);
-  border-radius: 13px; background: white;
+
+.option:hover {
+  background: #f4f3e8;
 }
-.pair-row label { font-size: 14px; font-weight: 800; }
-.pair-row small { display: block; font-size: 10px; color: var(--muted); margin-bottom: 4px; }
-.pair-row select {
-  width: 100%; min-width: 0; border: 1px solid #dcd8cb;
-  background: #fffdf8; border-radius: 10px; padding: 10px;
-  font-size: 13px; color: var(--ink);
+
+input[type="radio"] {
+  margin-top: 6px;
+  accent-color: #536b59;
 }
-.pair-row.correct { background: #edf5eb; border-color: #9cbea1; }
-.pair-row.wrong { background: #fff0ed; border-color: #d8897e; }
-.tip { text-align: center; color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 18px; }
-button:focus-visible, select:focus-visible { outline: 3px solid #65956e; outline-offset: 2px; }
-@media(max-width:520px) {
-  .options { grid-template-columns: 1fr; }
-  .pair-row { grid-template-columns: 1fr; }
-  .toolbar { flex-wrap: wrap; }
-  .tab { flex: 1; padding: 10px 7px; }
+
+.match-head,
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.match-head {
+  margin-bottom: 8px;
+  color: #68685f;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.match-row {
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9e7dc;
+}
+
+.match-row:last-child {
+  border-bottom: none;
+}
+
+.verb {
+  font-weight: 600;
+}
+
+select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d9d7c8;
+  border-radius: 8px;
+  background: white;
+  color: #292923;
+  font: inherit;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #536b59;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.88;
+}
+
+button.secondary {
+  background: #e7ece3;
+  color: #292923;
+}
+
+.result {
+  margin: 16px 0 0;
+  font-weight: bold;
+  color: #536b59;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 18px 10px 30px;
+  }
+
+  .section {
+    padding: 17px;
+  }
+
+  .match-head,
+  .match-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .match-head span:last-child {
+    display: none;
+  }
+
+  .match-row {
+    padding: 13px 0;
+  }
 }
 </style>
 </head>
+
 <body>
-<main class="app">
-<header>
-  <div class="eyebrow">РУССКИЙ ЯЗЫК · ТРЕНАЖЁР</div>
-  <h1>Повторяем <span>лексику</span></h1>
-  <p class="subtitle">Повседневные дела, встречи и отношения.<br>Вспоминай выражения и тренируй виды глаголов.</p>
-</header>
+<main>
 
-<nav class="tabs">
-  <button class="tab active" data-tab="exercise1">① Выбери выражение</button>
-  <button class="tab" data-tab="exercise2">② НСВ или СВ?</button>
-</nav>
+<h1>ЛЕКСИКА И ГРАММАТИКА</h1>
 
-<section class="panel" id="exercise1">
-  <div class="toolbar">
-    <div class="progress-wrap">
-      <div class="progress-label"><span>Результат</span><span id="score">0 из 12</span></div>
-      <div class="progress"><div class="bar" id="scoreBar"></div></div>
-    </div>
-    <button class="action secondary" id="restart1">↻ Заново</button>
-  </div>
-  <h2>Выбери подходящее выражение</h2>
-  <p class="hint">Прочитай предложение и выбери лучший вариант.</p>
-  <div class="question">
-    <div class="qnumber" id="qnumber"></div>
-    <div class="prompt" id="prompt"></div>
-  </div>
-  <div class="options" id="options"></div>
-  <div class="feedback" id="feedback" aria-live="polite"></div>
-  <div class="actions">
-    <button class="action primary" id="next" disabled>Следующий вопрос →</button>
-  </div>
+<section class="section">
+<h2>Упражнение 1. Выберите подходящий вариант</h2>
+<div id="questions"></div>
+
+<div class="actions">
+  <button type="button" onclick="checkAnswers()">
+    Проверить
+  </button>
+  <button type="button" class="secondary" onclick="resetAnswers()">
+    Сбросить
+  </button>
+</div>
+
+<p class="result" id="result1" aria-live="polite"></p>
 </section>
 
-<section class="panel hidden" id="exercise2">
-  <div class="toolbar">
-    <div class="progress-wrap">
-      <div class="progress-label"><span>Заполнено</span><span id="filled">0 из 12</span></div>
-      <div class="progress"><div class="bar" id="pairBar"></div></div>
-    </div>
-    <button class="action secondary" id="restart2">↻ Очистить</button>
-  </div>
-  <h2>Подбери пару НСВ — СВ</h2>
-  <p class="hint">Выбери совершенный вид для каждого глагола. Когда закончишь, нажми «Проверить ответы».</p>
-  <div class="pairs" id="pairs"></div>
-  <div class="feedback" id="pairFeedback" aria-live="polite">Заполни строки и проверь себя.</div>
-  <div class="actions">
-    <button class="action primary" id="checkPairs">Проверить ответы ✓</button>
-  </div>
+<section class="section">
+<h2>Упражнение 2. Подберите пару НСВ — СВ</h2>
+
+<div class="match-head">
+  <span>Несовершенный вид (НСВ)</span>
+  <span>Совершенный вид (СВ)</span>
+</div>
+
+<div id="matching"></div>
+
+<div class="actions">
+  <button type="button" onclick="checkMatching()">
+    Проверить
+  </button>
+  <button type="button" class="secondary" onclick="resetMatching()">
+    Сбросить
+  </button>
+</div>
+
+<p class="result" id="result2" aria-live="polite"></p>
 </section>
-<p class="tip">НСВ — процесс, привычка или повторяющееся действие. СВ — завершённое действие или результат.</p>
+
 </main>
 
 <script>
-const $ = id => document.getElementById(id);
-const shuffle = arr => [...arr].sort(() => Math.random() - .5);
-
-document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => {
-  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b === btn));
-  ["exercise1","exercise2"].forEach(id => $(id).classList.toggle("hidden", id !== btn.dataset.tab));
-}));
-
 const questions = [
- {p:"Каждое утро я ___ в семь часов.",a:"встаю",o:["встаю","встану","ложусь","лягу"],e:"«Каждое утро» обозначает привычку: вставать."},
- {p:"Вчера я очень устал, поэтому решил пораньше ___.",a:"лечь",o:["ложиться","лечь","вставать","проснуться"],e:"«Решил» — конкретное решение: лечь пораньше."},
- {p:"По выходным мы любим ___ друзей у себя дома.",a:"принимать гостей",o:["принимать гостей","принимать участие","одеваться","мириться"],e:"Принимать гостей — приглашать людей к себе домой."},
- {p:"Моя коллега хочет ___ в конференции.",a:"принять участие",o:["принять гостей","принять участие","познакомиться","поссориться"],e:"Устойчивое выражение: принять участие в конференции."},
- {p:"Я обычно ___ сразу после душа.",a:"одеваюсь",o:["одеваюсь","оденусь","обнимаюсь","встречаюсь"],e:"Одеваться — надевать на себя одежду."},
- {p:"Мы договорились ___ у входа в музей в шесть.",a:"встретиться",o:["встречаться","встретиться","ссориться","принимать гостей"],e:"Договорились о конкретной встрече — встретиться."},
- {p:"Они давно не виделись и крепко ___.",a:"обнялись",o:["обнимались","обнялись","мирились","ссорились"],e:"Обнялись — одно завершённое действие."},
- {p:"Мы иногда ___, но потом всегда ___.",a:"ссоримся … миримся",o:["ссоримся … миримся","поссоримся … помиримся","встаём … ложимся","одеваемся … собираемся"],e:"«Иногда» описывает повторяющуюся ситуацию: ссоримся и миримся."},
- {p:"Перед сном я ___ и чищу зубы.",a:"умываюсь",o:["умываюсь","умоюсь","знакомлюсь","принимаю участие"],e:"Здесь описана привычная последовательность действий."},
- {p:"На вечеринке я хочу ___ с новыми людьми.",a:"познакомиться",o:["знакомиться","познакомиться","принимать гостей","ложиться"],e:"Хочу познакомиться — хочу установить знакомство."},
- {p:"Обычно я ___ в одиннадцать вечера.",a:"ложусь",o:["ложусь","лягу","встану","проснусь"],e:"«Обычно» указывает на привычку: ложусь."},
- {p:"Я уже ___ и теперь могу завтракать.",a:"проснулся",o:["просыпался","проснулся","ложился","собирался"],e:"«Уже проснулся» — результат завершённого действия."}
+  {
+    q: "1. Каждое утро я ___ в семь часов.",
+    options: ["встаю", "ложусь", "просыпаюсь"],
+    answer: 0
+  },
+  {
+    q: "2. Вчера я очень устал, поэтому решил пораньше ___.",
+    options: ["вставать", "лечь", "проснуться"],
+    answer: 1
+  },
+  {
+    q: "3. По выходным мы любим ___ у себя дома.",
+    options: ["принимать гостей", "принимать участие", "знакомиться"],
+    answer: 0
+  },
+  {
+    q: "4. Моя коллега хочет ___ в конференции.",
+    options: ["принять гостей", "принять участие", "встретиться"],
+    answer: 1
+  },
+  {
+    q: "5. Я обычно ___ тепло осенью.",
+    options: ["одеваюсь", "умываюсь", "просыпаюсь"],
+    answer: 0
+  },
+  {
+    q: "6. Мы договорились ___ у входа в музей в шесть.",
+    options: ["познакомиться", "встретиться", "поссориться"],
+    answer: 1
+  },
+  {
+    q: "7. Они давно не виделись и крепко ___.",
+    options: ["ссорились", "обнялись", "оделись"],
+    answer: 1
+  },
+  {
+    q: "8. Мы иногда ___, но потом всегда ___.",
+    options: [
+      "ссоримся … миримся",
+      "встречаемся … знакомимся",
+      "просыпаемся … встаём"
+    ],
+    answer: 0
+  },
+  {
+    q: "9. Перед сном я ___ и чищу зубы.",
+    options: ["умываюсь", "одеваюсь", "собираюсь"],
+    answer: 0
+  },
+  {
+    q: "10. На вечеринке я хочу ___ с новыми людьми.",
+    options: ["познакомиться", "поссориться", "обняться"],
+    answer: 0
+  },
+  {
+    q: "11. Обычно я ___ в одиннадцать вечера.",
+    options: ["просыпаюсь", "ложусь", "встаю"],
+    answer: 1
+  },
+  {
+    q: "12. Я уже ___ и теперь могу завтракать.",
+    options: ["проснулся", "лёг", "оделся"],
+    answer: 0
+  }
 ];
-let quiz=[], qi=0, points=0, answered=false, finished=false;
 
-function startQuiz(){
- quiz=shuffle(questions);qi=0;points=0;answered=false;finished=false;
- $("next").onclick=null;
- updateScore();showQuestion();
-}
-function updateScore(){
- $("score").textContent=`${points} из ${questions.length}`;
- $("scoreBar").style.width=(points/questions.length*100)+"%";
-}
-function showQuestion(){
- answered=false;
- const q=quiz[qi];
- $("qnumber").textContent=`Ситуация ${qi+1} из ${quiz.length}`;
- $("prompt").textContent=q.p;
- $("feedback").textContent="";
- $("feedback").className="feedback";
- $("next").disabled=true;
- $("next").textContent="Следующий вопрос →";
- $("options").innerHTML="";
- shuffle(q.o).forEach(answer=>{
-   const b=document.createElement("button");
-   b.type="button";b.className="option";b.textContent=answer;
-   b.addEventListener("click",()=>{
-     if(answered)return;
-     answered=true;
-     [...$("options").children].forEach(option=>{
-       option.disabled=true;
-       if(option.textContent===q.a)option.classList.add("correct");
-     });
-     if(answer===q.a){
-       points++;
-       $("feedback").textContent="Правильно! "+q.e;
-       $("feedback").className="feedback good";
-     }else{
-       b.classList.add("wrong");
-       $("feedback").textContent="Не совсем. "+q.e;
-       $("feedback").className="feedback bad";
-     }
-     updateScore();
-     $("next").disabled=false;
-     $("next").textContent=qi===quiz.length-1?"Посмотреть результат →":"Следующий вопрос →";
-   });
-   $("options").appendChild(b);
- });
-}
-$("next").addEventListener("click",()=>{
- if(!answered)return;
- if(qi<quiz.length-1){qi++;showQuestion();return;}
- finished=true;
- $("qnumber").textContent="Результат";
- $("prompt").textContent=`Ты ответил(а) правильно на ${points} из ${quiz.length} вопросов!`;
- $("options").innerHTML="";
- $("feedback").textContent=points===quiz.length?"Прекрасно! Все ответы правильные! 🎉":"Попробуй ещё раз, чтобы закрепить лексику.";
- $("feedback").className="feedback "+(points===quiz.length?"good":"");
- $("next").textContent="Пройти ещё раз";
- $("next").onclick=startQuiz;
+const questionsContainer = document.getElementById("questions");
+
+questions.forEach((item, index) => {
+  const block = document.createElement("div");
+  block.className = "question";
+
+  const prompt = document.createElement("p");
+  prompt.textContent = item.q;
+  block.appendChild(prompt);
+
+  const options = document.createElement("div");
+  options.className = "options";
+
+  item.options.forEach((option, optionIndex) => {
+    const label = document.createElement("label");
+    label.className = "option";
+
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "question" + index;
+    radio.value = optionIndex;
+
+    const text = document.createElement("span");
+    text.textContent =
+      String.fromCharCode(1072 + optionIndex) + ") " + option;
+
+    label.appendChild(radio);
+    label.appendChild(text);
+    options.appendChild(label);
+  });
+
+  block.appendChild(options);
+  questionsContainer.appendChild(block);
 });
-$("restart1").addEventListener("click",startQuiz);
+
+function checkAnswers() {
+  let score = 0;
+
+  questions.forEach((question, index) => {
+    const selected = document.querySelector(
+      'input[name="question' + index + '"]:checked'
+    );
+
+    if (selected && Number(selected.value) === question.answer) {
+      score++;
+    }
+  });
+
+  document.getElementById("result1").textContent =
+    "Результат: " + score + " из " + questions.length;
+}
+
+function resetAnswers() {
+  document.querySelectorAll(
+    '#questions input[type="radio"]'
+  ).forEach(input => {
+    input.checked = false;
+  });
+
+  document.getElementById("result1").textContent = "";
+}
 
 const pairs = [
- ["вставать","встать"],
- ["просыпаться","проснуться"],
- ["ложиться","лечь"],
- ["одеваться","одеться"],
- ["собираться","собраться"],
- ["умываться","умыться"],
- ["знакомиться","познакомиться"],
- ["встречаться","встретиться"],
- ["обниматься","обняться"],
- ["ссориться","поссориться"],
- ["мириться","помириться"],
- ["принимать гостей","принять гостей"],
- ["принимать участие","принять участие"]
+  ["принимать гостей", "принять гостей"],
+  ["принимать участие", "принять участие"],
+  ["вставать", "встать"],
+  ["просыпаться", "проснуться"],
+  ["ложиться", "лечь"],
+  ["одеваться", "одеться"],
+  ["собираться", "собраться"],
+  ["умываться", "умыться"],
+  ["знакомиться", "познакомиться"],
+  ["встречаться", "встретиться"],
+  ["обниматься", "обняться"],
+  ["ссориться", "поссориться"],
+  ["мириться", "помириться"]
 ];
-// Use 13 pairs, including both fixed expressions.
-function renderPairs(){
- $("pairs").innerHTML="";
- const svOptions=shuffle(pairs.map(p=>p[1]));
- pairs.forEach(([ns,sv])=>{
-   const row=document.createElement("div");
-   row.className="pair-row";row.dataset.answer=sv;
-   const label=document.createElement("label");
-   label.innerHTML=`<small>НЕСОВЕРШЕННЫЙ ВИД · НСВ</small>${ns}`;
-   const select=document.createElement("select");
-   select.setAttribute("aria-label","Совершенный вид для "+ns);
-   const empty=document.createElement("option");
-   empty.value="";empty.textContent="Выбери СВ…";select.appendChild(empty);
-   shuffle(svOptions).forEach(word=>{
-     const option=document.createElement("option");
-     option.value=word;option.textContent=word;select.appendChild(option);
-   });
-   select.addEventListener("change",()=>{
-     row.classList.remove("correct","wrong");
-     updatePairProgress();
-   });
-   row.append(label,select);
-   $("pairs").appendChild(row);
- });
- $("pairFeedback").textContent="Заполни строки и проверь себя.";
- $("pairFeedback").className="feedback";
- updatePairProgress();
-}
-function updatePairProgress(){
- const selects=[...document.querySelectorAll("#pairs select")];
- const n=selects.filter(s=>s.value).length;
- $("filled").textContent=`${n} из ${pairs.length}`;
- $("pairBar").style.width=(n/pairs.length*100)+"%";
-}
-$("checkPairs").addEventListener("click",()=>{
- let correct=0,filled=0;
- document.querySelectorAll(".pair-row").forEach(row=>{
-   const select=row.querySelector("select");
-   row.classList.remove("correct","wrong");
-   if(select.value){
-     filled++;
-     if(select.value===row.dataset.answer){correct++;row.classList.add("correct");}
-     else row.classList.add("wrong");
-   }
- });
- if(filled<pairs.length){
-   $("pairFeedback").textContent=`Заполнено ${filled} из ${pairs.length}. Заполни остальные строки.`;
-   $("pairFeedback").className="feedback bad";
- }else if(correct===pairs.length){
-   $("pairFeedback").textContent="Все пары верны! Отличная работа! 🎉";
-   $("pairFeedback").className="feedback good";
- }else{
-   $("pairFeedback").textContent=`Правильно ${correct} из ${pairs.length}. Исправь ответы в розовых строках.`;
-   $("pairFeedback").className="feedback bad";
- }
-});
-$("restart2").addEventListener("click",renderPairs);
 
-startQuiz();
-renderPairs();
+const matchingContainer = document.getElementById("matching");
+const perfectives = pairs.map(pair => pair[1]);
+
+// Перемешиваем варианты совершенного вида.
+for (let i = perfectives.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [perfectives[i], perfectives[j]] =
+    [perfectives[j], perfectives[i]];
+}
+
+pairs.forEach((pair, index) => {
+  const row = document.createElement("div");
+  row.className = "match-row";
+
+  const verb = document.createElement("div");
+  verb.className = "verb";
+  verb.textContent = pair[0];
+
+  const select = document.createElement("select");
+  select.setAttribute(
+    "aria-label",
+    "Совершенный вид для глагола " + pair[0]
+  );
+  select.dataset.answer = pair[1];
+
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = "Выберите вариант";
+  select.appendChild(placeholder);
+
+  perfectives.forEach(perfective => {
+    const option = document.createElement("option");
+    option.value = perfective;
+    option.textContent = perfective;
+    select.appendChild(option);
+  });
+
+  row.appendChild(verb);
+  row.appendChild(select);
+  matchingContainer.appendChild(row);
+});
+
+function checkMatching() {
+  let score = 0;
+  const selects = matchingContainer.querySelectorAll("select");
+
+  selects.forEach(select => {
+    if (select.value === select.dataset.answer) {
+      score++;
+    }
+  });
+
+  document.getElementById("result2").textContent =
+    "Результат: " + score + " из " + pairs.length;
+}
+
+function resetMatching() {
+  matchingContainer.querySelectorAll("select").forEach(select => {
+    select.value = "";
+  });
+
+  document.getElementById("result2").textContent = "";
+}
 </script>
+
 </body>
 </html>
+```
