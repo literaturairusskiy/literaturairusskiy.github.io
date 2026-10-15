@@ -1,0 +1,474 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЛЕКСИКА И ГРАММАТИКА</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px 40px;
+  background: #f4f3e8;
+  color: #292923;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: clamp(25px, 4vw, 34px);
+  line-height: 1.25;
+  margin: 0 0 28px;
+  letter-spacing: .03em;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+
+.section {
+  background: #fffef9;
+  border: 1px solid #d9d7c8;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.question {
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e9e7dc;
+}
+
+.question:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.prompt {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.options {
+  display: grid;
+  gap: 7px;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #f4f3e8;
+}
+
+input[type="radio"] {
+  margin-top: 6px;
+  accent-color: #536b59;
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #536b59;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .88;
+}
+
+button.secondary {
+  background: #e7ece3;
+  color: #292923;
+}
+
+.result {
+  margin: 16px 0 0;
+  font-weight: bold;
+  color: #536b59;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 18px 10px 30px;
+  }
+
+  .section {
+    padding: 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+<main>
+
+<h1>ЛЕКСИКА И ГРАММАТИКА</h1>
+
+<!-- УПРАЖНЕНИЕ 1 -->
+
+<section class="section">
+<h2>Упражнение 1. Я хочу, мне нужно</h2>
+
+<div id="exercise1"></div>
+
+<div class="actions">
+  <button type="button" onclick="checkExercise1()">Проверить</button>
+  <button type="button" class="secondary" onclick="resetExercise1()">Сбросить</button>
+</div>
+
+<p class="result" id="result1" aria-live="polite"></p>
+</section>
+
+<!-- УПРАЖНЕНИЕ 2 -->
+
+<section class="section">
+<h2>Упражнение 2. Заканчивать, продолжать, начинать + НСВ</h2>
+
+<p>Выберите необходимый глагол.</p>
+
+<div id="exercise2"></div>
+
+<div class="actions">
+  <button type="button" onclick="checkExercise2()">Проверить</button>
+  <button type="button" class="secondary" onclick="resetExercise2()">Сбросить</button>
+</div>
+
+<p class="result" id="result2" aria-live="polite"></p>
+</section>
+
+<!-- УПРАЖНЕНИЕ 3 -->
+
+<section class="section">
+<h2>Упражнение 3. Глаголы с -ся и без -ся</h2>
+
+<div id="exercise3"></div>
+
+<div class="actions">
+  <button type="button" onclick="checkExercise3()">Проверить</button>
+  <button type="button" class="secondary" onclick="resetExercise3()">Сбросить</button>
+</div>
+
+<p class="result" id="result3" aria-live="polite"></p>
+</section>
+
+</main>
+
+<script>
+function renderMultipleChoice(containerId, questions, prefix) {
+  const container = document.getElementById(containerId);
+
+  questions.forEach((q, index) => {
+    const block = document.createElement("div");
+    block.className = "question";
+
+    const prompt = document.createElement("p");
+    prompt.className = "prompt";
+    prompt.textContent = q.q;
+    block.appendChild(prompt);
+
+    const options = document.createElement("div");
+    options.className = "options";
+
+    q.options.forEach((option, j) => {
+      const label = document.createElement("label");
+      label.className = "option";
+
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = prefix + index;
+      radio.value = j;
+
+      const text = document.createElement("span");
+      text.textContent =
+        String.fromCharCode(1072 + j) + ") " + option;
+
+      label.appendChild(radio);
+      label.appendChild(text);
+      options.appendChild(label);
+    });
+
+    block.appendChild(options);
+    container.appendChild(block);
+  });
+}
+
+function checkQuiz(questions, prefix, resultId) {
+  let score = 0;
+
+  questions.forEach((q, index) => {
+    const selected = document.querySelector(
+      'input[name="' + prefix + index + '"]:checked'
+    );
+
+    if (selected && Number(selected.value) === q.answer) {
+      score++;
+    }
+  });
+
+  document.getElementById(resultId).textContent =
+    "Результат: " + score + " из " + questions.length;
+}
+
+function resetQuiz(containerId, resultId) {
+  document.querySelectorAll(
+    "#" + containerId + ' input[type="radio"]'
+  ).forEach(input => {
+    input.checked = false;
+  });
+
+  document.getElementById(resultId).textContent = "";
+}
+
+
+// УПРАЖНЕНИЕ 1
+
+const questions1 = [
+  {
+    q: "1. Я не хочу ___ сегодня вечером. Я хочу ___ новый фильм.",
+    options: [
+      "работать / посмотреть",
+      "поработать / смотреть",
+      "поработать / посмотрю"
+    ],
+    answer: 0
+  },
+  {
+    q: "2. Мне нужно ___ домашнее задание до завтра.",
+    options: ["сделать", "делаю", "сделал"],
+    answer: 0
+  },
+  {
+    q: "3. Мне не нужно ___ сегодня: у меня выходной.",
+    options: ["работать", "поработать", "работаю"],
+    answer: 0
+  },
+  {
+    q: "4. Я не хочу ___ на автобусе. Я хочу ___ пешком.",
+    options: [
+      "ехать / пойти",
+      "поехать / идти",
+      "еду / пошёл"
+    ],
+    answer: 0
+  },
+  {
+    q: "5. Мне нужно ___ письмо преподавателю, а потом я хочу ___ книгу.",
+    options: [
+      "написать / почитать",
+      "пишу / читать",
+      "написать / читаю"
+    ],
+    answer: 0
+  },
+  {
+    q: "6. Я не хочу ___ с друзьями сегодня. Мне нужно ___ экзамену.",
+    options: [
+      "встречаться / подготовиться",
+      "встретиться / готовиться",
+      "встречаюсь / подготовиться"
+    ],
+    answer: 0
+  },
+  {
+    q: "7. Мне не нужно ___ продукты: у меня полный холодильник.",
+    options: ["покупать", "купить", "купил"],
+    answer: 0
+  },
+  {
+    q: "8. Я хочу ___ русский каждый день, потому что мне нужно ___ экзамен.",
+    options: [
+      "изучать / сдать",
+      "изучить / сдавать",
+      "изучаю / сдал"
+    ],
+    answer: 0
+  }
+];
+
+renderMultipleChoice("exercise1", questions1, "q1_");
+
+function checkExercise1() {
+  checkQuiz(questions1, "q1_", "result1");
+}
+
+function resetExercise1() {
+  resetQuiz("exercise1", "result1");
+}
+
+
+// УПРАЖНЕНИЕ 2
+
+const questions2 = [
+  {
+    q: "1. Я уже заканчиваю ___ домашнее задание.",
+    options: ["делать", "сделать"],
+    answer: 0
+  },
+  {
+    q: "2. Она закончила ___ книгу вчера вечером.",
+    options: ["читать", "прочитать"],
+    answer: 0
+  },
+  {
+    q: "3. Мы продолжаем ___ русский язык.",
+    options: ["изучать", "изучить"],
+    answer: 0
+  },
+  {
+    q: "4. Я начинаю ___, как работает эта система.",
+    options: ["понимать", "понять"],
+    answer: 0
+  },
+  {
+    q: "5. Он закончил ___ письмо и отправил его.",
+    options: ["писать", "написать"],
+    answer: 0
+  },
+  {
+    q: "6. Когда ты начал ___ китайский язык?",
+    options: ["учить", "выучить"],
+    answer: 0
+  },
+  {
+    q: "7. Мы начали ___ этот вопрос на прошлой неделе.",
+    options: ["обсуждать", "обсудить"],
+    answer: 0
+  }
+];
+
+renderMultipleChoice("exercise2", questions2, "q2_");
+
+function checkExercise2() {
+  checkQuiz(questions2, "q2_", "result2");
+}
+
+function resetExercise2() {
+  resetQuiz("exercise2", "result2");
+}
+
+
+// УПРАЖНЕНИЕ 3
+
+const questions3 = [
+  {
+    q: "1. Каждое утро я ___ в семь часов.",
+    options: ["просыпаю", "просыпаюсь"],
+    answer: 1
+  },
+  {
+    q: "2. Вчера я поздно ___ спать.",
+    options: ["лёг", "лёгся"],
+    answer: 0
+  },
+  {
+    q: "3. Перед выходом на улицу она быстро ___.",
+    options: ["одела", "оделась"],
+    answer: 1
+  },
+  {
+    q: "4. Перед сном я всегда ___.",
+    options: ["умываю", "умываюсь"],
+    answer: 1
+  },
+  {
+    q: "5. На вечеринке я хочу ___ с новыми людьми.",
+    options: ["познакомиться", "познакомить"],
+    answer: 0
+  },
+  {
+    q: "6. Мы договорились ___ у метро в шесть часов.",
+    options: ["встретить", "встретиться"],
+    answer: 1
+  },
+  {
+    q: "7. Друзья давно не виделись и при встрече крепко ___.",
+    options: ["обняли", "обнялись"],
+    answer: 1
+  },
+  {
+    q: "8. Иногда мы ___ из-за пустяков.",
+    options: ["ссорим", "ссоримся"],
+    answer: 1
+  },
+  {
+    q: "9. После разговора они решили ___.",
+    options: ["помирить", "помириться"],
+    answer: 1
+  },
+  {
+    q: "10. Мама помогает ребёнку ___ перед прогулкой.",
+    options: ["одеться", "одеваться"],
+    answer: 0
+  },
+  {
+    q: "11. Я хочу ___ с коллегой, чтобы обсудить проект.",
+    options: ["встретиться", "встречаться"],
+    answer: 0
+  },
+  {
+    q: "12. Преподаватель хочет ___ студентов друг с другом.",
+    options: ["познакомить", "познакомиться"],
+    answer: 0
+  },
+  {
+    q: "13. После ссоры друзья наконец ___.",
+    options: ["помирили", "помирились"],
+    answer: 1
+  },
+  {
+    q: "14. Мне нужно ___ вещи в чемодан перед поездкой.",
+    options: ["собраться", "собрать"],
+    answer: 1
+  },
+  {
+    q: "15. Перед тем как выйти, я быстро ___ и взял сумку.",
+    options: ["оделся", "одел"],
+    answer: 0
+  }
+];
+
+renderMultipleChoice("exercise3", questions3, "q3_");
+
+function checkExercise3() {
+  checkQuiz(questions3, "q3_", "result3");
+}
+
+function resetExercise3() {
+  resetQuiz("exercise3", "result3");
+}
+</script>
+
+</body>
+</html>
+```
