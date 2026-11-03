@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Профессии, интересы и зарплата</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f3ee;
+    color: #292929;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px 18px;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 27px; margin-bottom: 8px; }
+  h2 { font-size: 21px; margin-top: 0; }
+  .intro { color: #666; margin-bottom: 25px; }
+
+  .exercise {
+    background: white;
+    border-radius: 14px;
+    padding: 22px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px #0000000b;
+  }
+
+  .task { margin: 17px 0; }
+  .hint { color: #777; font-size: 14px; }
+
+  input {
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background: #fafafa;
+    padding: 7px 9px;
+    font-size: 16px;
+    width: 190px;
+    max-width: 100%;
+    border-radius: 4px 4px 0 0;
+    outline: none;
+  }
+
+  input:focus { border-color: #657e70; }
+  input.correct { border-color: #36845b; background: #eff8f1; }
+  input.incorrect { border-color: #c45b54; background: #fff1ef; }
+
+  button {
+    background: #657e70;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 17px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 8px 5px 5px 0;
+  }
+
+  button:hover { background: #4e6759; }
+
+  .secondary { background: #777; }
+  .feedback { font-size: 14px; margin-top: 8px; }
+  .answers {
+    display: none;
+    background: #f1f4f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 12px;
+  }
+  .answers p { margin: 5px 0; }
+  .score { font-weight: bold; margin-top: 10px; }
+  .open-answer {
+    width: 100%;
+    min-height: 42px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 9px;
+    margin: 5px 0 12px;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Профессии, интересы и зарплата</h1>
+<p class="intro">Выполните упражнения. Обратите внимание на вопросы: чем? кем? в чём? сколько?</p>
+
+<!-- УПРАЖНЕНИЕ 1 -->
+<section class="exercise">
+<h2>Упражнение 1. Чем? Кем?</h2>
+<p>Раскройте скобки и поставьте слова в правильную форму.</p>
+
+<div class="task">1. Моя сестра занимается 
+  <input data-answer="музыкой"> (музыка).
+</div>
+<div class="task">2. Мой брат увлекается 
+  <input data-answer="футболом"> (футбол).
+</div>
+<div class="task">3. Я интересуюсь 
+  <input data-answer="историей"> (история).
+</div>
+<div class="task">4. После университета Анна хочет стать 
+  <input data-answer="врачом"> (врач).
+</div>
+<div class="task">5. Мой друг работает 
+  <input data-answer="программистом"> (программист).
+</div>
+<div class="task">6. Моя мама занимается 
+  <input data-answer="спортом"> (спорт).
+</div>
+<div class="task">7. Я хочу стать 
+  <input data-answer="переводчиком"> (переводчик).
+</div>
+<div class="task">8. Мой отец интересуется 
+  <input data-answer="литературой"> (литература).
+</div>
+
+<button onclick="check(this)">Проверить</button>
+<button class="secondary" onclick="showAnswers(this)">Показать ответы</button>
+<div class="feedback"></div>
+<div class="answers">
+  <p>1. музыкой</p>
+  <p>2. футболом</p>
+  <p>3. историей</p>
+  <p>4. врачом</p>
+  <p>5. программистом</p>
+  <p>6. спортом</p>
+  <p>7. переводчиком</p>
+  <p>8. литературой</p>
+</div>
+</section>
+
+<!-- УПРАЖНЕНИЕ 2 -->
+<section class="exercise">
+<h2>Упражнение 2. Разбираться в чём?</h2>
+<p>Поставьте слова в правильную форму.</p>
+
+<div class="task">1. Мой друг хорошо разбирается в 
+  <input data-answer="компьютерах"> (компьютеры).
+</div>
+<div class="task">2. Моя сестра разбирается в 
+  <input data-answer="моде"> (мода).
+</div>
+<div class="task">3. Я не разбираюсь в 
+  <input data-answer="политике"> (политика).
+</div>
+<div class="task">4. Мой папа хорошо разбирается в 
+  <input data-answer="машинах"> (машины).
+</div>
+<div class="task">5. Анна разбирается в 
+  <input data-answer="литературе"> (литература).
+</div>
+<div class="task">6. Мы немного разбираемся в 
+  <input data-answer="экономике"> (экономика).
+</div>
+<div class="task">7. Ты хорошо разбираешься в 
+  <input data-answer="музыке"> (музыка)?
+</div>
+
+<button onclick="check(this)">Проверить</button>
+<button class="secondary" onclick="showAnswers(this)">Показать ответы</button>
+<div class="feedback"></div>
+<div class="answers">
+  <p>1. компьютерах</p>
+  <p>2. моде</p>
+  <p>3. политике</p>
+  <p>4. машинах</p>
+  <p>5. литературе</p>
+  <p>6. экономике</p>
+  <p>7. музыке</p>
+</div>
+</section>
+
+<!-- УПРАЖНЕНИЕ 3 -->
+<section class="exercise">
+<h2>Упражнение 3. Зарплата и заработок</h2>
+<p>Вставьте подходящие слова. Используйте конструкции:
+<strong>получать зарплату</strong> и <strong>зарабатывать сколько?</strong></p>
+
+<div class="task">
+1. Мой брат работает программистом и получает
+<input data-answer="высокую"> зарплату. (высокая)
+</div>
+<div class="task">
+2. Она работает в школе и получает
+<input data-answer="среднюю"> зарплату. (средняя)
+</div>
+<div class="task">
+3. Я работаю неполный день и получаю
+<input data-answer="маленькую"> зарплату. (маленькая)
+</div>
+<div class="task">
+4. Мой отец работает в хорошей компании и получает
+<input data-answer="хорошую"> зарплату. (хорошая)
+</div>
+<div class="task">
+5. В месяц он зарабатывает
+<input data-answer="100 тысяч рублей">. (100 тысяч рублей)
+</div>
+<div class="task">
+6. Моя подруга зарабатывает
+<input data-answer="50 тысяч рублей"> в месяц. (50 тысяч рублей)
+</div>
+<div class="task">
+7. Сколько ты хочешь зарабатывать?
+Я хочу зарабатывать
+<input data-answer="200 тысяч рублей"> в месяц. (200 тысяч рублей)
+</div>
+
+<button onclick="check(this)">Проверить</button>
+<button class="secondary" onclick="showAnswers(this)">Показать ответы</button>
+<div class="feedback"></div>
+<div class="answers">
+  <p>1. высокую</p>
+  <p>2. среднюю</p>
+  <p>3. маленькую</p>
+  <p>4. хорошую</p>
+  <p>5. 100 тысяч рублей</p>
+  <p>6. 50 тысяч рублей</p>
+  <p>7. 200 тысяч рублей</p>
+</div>
+</section>
+
+<!-- УПРАЖНЕНИЕ 4 -->
+<section class="exercise">
+<h2>Упражнение 4. Два типа будущего времени</h2>
+<p>Раскройте скобки. Используйте правильную форму будущего времени: НСВ или СВ.</p>
+
+<p class="hint">
+НСВ — процесс, регулярное действие.
+<br>
+СВ — результат, достижение цели.
+</p>
+
+<div class="task">
+1. Когда я окончу университет, я
+<input data-answer="буду зарабатывать"> (зарабатывать) 150 тысяч рублей в месяц.
+</div>
+<div class="task">
+2. Когда мне будет 40 лет, я
+<input data-answer="заработаю"> (заработать) миллион рублей.
+</div>
+<div class="task">
+3. После университета я
+<input data-answer="буду получать"> (получать) хорошую зарплату каждый месяц.
+</div>
+<div class="task">
+4. Я много работаю, поэтому в следующем году
+<input data-answer="заработаю"> (заработать) достаточно денег на путешествие.
+</div>
+<div class="task">
+5. Когда я стану директором, я
+<input data-answer="буду зарабатывать"> (зарабатывать) намного больше.
+</div>
+<div class="task">
+6. Если я буду много работать, через пять лет я
+<input data-answer="заработаю"> (заработать) на собственную квартиру.
+</div>
+<div class="task">
+7. В будущем я
+<input data-answer="буду получать"> (получать) зарплату на банковскую карту каждый месяц.
+</div>
+<div class="task">
+8. К концу года я
+<input data-answer="заработаю"> (заработать) достаточно денег для покупки машины.
+</div>
+
+<button onclick="check(this)">Проверить</button>
+<button class="secondary" onclick="showAnswers(this)">Показать ответы</button>
+<div class="feedback"></div>
+<div class="answers">
+  <p>1. буду зарабатывать</p>
+  <p>2. заработаю</p>
+  <p>3. буду получать</p>
+  <p>4. заработаю</p>
+  <p>5. буду зарабатывать</p>
+  <p>6. заработаю</p>
+  <p>7. буду получать</p>
+  <p>8. заработаю</p>
+</div>
+</section>
+
+<!-- УПРАЖНЕНИЕ 5 -->
+<section class="exercise">
+<h2>Упражнение 5. Моя биография</h2>
+<p>Ответьте на вопросы полными предложениями. Используйте новые конструкции.</p>
+
+<div class="task">
+<strong>1. Когда вы родились?</strong>
+<p class="hint">Я родился / родилась в ... году.</p>
+<textarea class="open-answer" placeholder="Напишите ответ..."></textarea>
+</div>
+
+<div class="task">
+<strong>2. Чем вы интересуетесь, увлекаетесь или занимаетесь?</strong>
+<p class="hint">Я интересуюсь английским языком. Я увлекаюсь спортом.</p>
+<textarea class="open-answer" placeholder="Напишите ответ..."></textarea>
+</div>
+
+<div class="task">
+<strong>3. В чём вы разбираетесь?</strong>
+<p class="hint">Я разбираюсь в компьютерах / музыке / литературе.</p>
+<textarea class="open-answer" placeholder="Напишите ответ..."></textarea>
+</div>
+
+<div class="task">
+<strong>4. Какую зарплату вы хотите получать в будущем?</strong>
+<p class="hint">Когда я окончу университет, я буду получать высокую зарплату. Я буду зарабатывать ...</p>
+<textarea class="open-answer" placeholder="Напишите ответ..."></textarea>
+</div>
+
+<div class="task">
+<strong>5. Кем вы хотите стать?</strong>
+<textarea class="open-answer" placeholder="Напишите ответ..."></textarea>
+</div>
+
+<div class="task">
+<strong>6. Сколько вы хотите зарабатывать, когда вам будет 40 лет?</strong>
+<textarea class="open-answer" placeholder="Напишите ответ..."></textarea>
+</div>
+
+</section>
+
+<script>
+function normalize(s) {
+  return s.trim().toLowerCase().replace(/\s+/g, ' ').replace(/[.,!?;:]+$/g, '');
+}
+
+function check(button) {
+  const section = button.closest('.exercise');
+  const inputs = section.querySelectorAll('input[data-answer]');
+  let correct = 0;
+
+  inputs.forEach(input => {
+    const answer = normalize(input.value);
+    const expected = normalize(input.dataset.answer);
+
+    input.classList.remove('correct', 'incorrect');
+
+    if (answer === expected) {
+      input.classList.add('correct');
+      correct++;
+    } else {
+      input.classList.add('incorrect');
+    }
+  });
+
+  section.querySelector('.feedback').textContent =
+    'Правильно: ' + correct + ' из ' + inputs.length + '.';
+}
+
+function showAnswers(button) {
+  const answers = button.closest('.exercise').querySelector('.answers');
+  answers.style.display =
+    answers.style.display === 'block' ? 'none' : 'block';
+  button.textContent =
+    answers.style.display === 'block' ? 'Скрыть ответы' : 'Показать ответы';
+}
+</script>
+
+</body>
+</html>
