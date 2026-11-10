@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Семья и отношения — тренажёр русского языка</title>
+<style>
+:root{--ink:#243047;--muted:#667085;--paper:#fffdf8;--bg:#f1f4fb;--purple:#7257d8;--purple2:#eeeaff;--pink:#ffdfeb;--mint:#dff5ed;--yellow:#fff1c9;--line:#e5e8f0;--green:#18794e;--red:#bd3445}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(135deg,#f1f4fb,#fff4f0);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.55}
+main{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+.hero{padding:30px;border-radius:28px;background:linear-gradient(120deg,#352b69,#7257d8 65%,#a88bea);color:white;box-shadow:0 14px 35px #41317b25}
+.hero h1{font-size:clamp(27px,5vw,42px);line-height:1.1;margin:0 0 10px}
+.hero p{margin:0;color:#eeeaff}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{background:#ffffff22;border:1px solid #ffffff40;border-radius:30px;padding:6px 12px;font-size:13px}
+.section{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px;margin-top:22px;box-shadow:0 8px 25px #26324a0a}
+h2{font-size:23px;margin:0 0 5px}
+.sub{color:var(--muted);margin:0 0 18px}
+.task{padding:15px 14px;border:1px solid var(--line);border-radius:15px;margin:11px 0;background:white}
+.task p{margin:0 0 10px}
+.num{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:9px;background:var(--purple2);color:var(--purple);font-weight:800;font-size:13px;margin-right:8px}
+input.blank,select.blank{display:inline-block;min-width:112px;max-width:100%;border:0;border-bottom:2px solid #9a8be0;border-radius:5px 5px 0 0;background:#f6f3ff;padding:5px 7px;color:var(--ink);font:inherit;font-size:15px;outline:none}
+input.blank:focus,select.blank:focus{border-bottom-color:var(--purple);background:#eeeaff}
+input.blank{width:145px}
+select.blank{width:auto;min-width:120px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+button{border:0;border-radius:12px;padding:10px 15px;font:600 14px inherit;cursor:pointer;background:var(--purple);color:white}
+button.secondary{background:#eeeaff;color:#4935a5}
+button.ghost{background:#f2f4f7;color:#344054}
+button:hover{filter:brightness(.97);transform:translateY(-1px)}
+.feedback{font-size:13px;font-weight:650;margin-top:8px;min-height:18px}
+.correct{color:var(--green)}.wrong{color:var(--red)}
+.score{font-weight:750;color:#4935a5;margin-left:auto;align-self:center}
+.answerbox{display:none;margin-top:12px;padding:12px 14px;border-radius:12px;background:#f0fbf6;color:#245b42;font-size:14px}
+.answerbox.show{display:block}
+.questions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.qcard{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px}
+.qcard strong{display:block;margin-bottom:6px}
+.sample{background:#f0f8ff;border-radius:10px;padding:9px 11px;margin-top:8px;color:#31516f;font-size:14px}
+.note{background:#fff7df;border-radius:14px;padding:13px 15px;margin-top:14px;color:#69521c;font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:25px}
+@media(max-width:650px){main{padding:14px 10px 40px}.hero,.section{padding:19px}.questions{grid-template-columns:1fr}.task{padding:13px 11px}input.blank{width:125px}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <h1>Семья и отношения</h1>
+  <p>Интерактивный тренажёр: падежи, семейная лексика и глаголы об отношениях.</p>
+  <div class="pills"><span class="pill">Уровень А2</span></div>
+</header>
+
+<section class="section" id="ex1">
+<h2>1. Винительный и родительный падежи</h2>
+<p class="sub">Раскройте скобки и поставьте слова в правильную форму. Впишите все пропущенные формы через запятую.</p>
+<div class="task"><p><span class="num">1</span>Маша очень похожа на (мама) <input class="blank" data-answer="маму">. А её братья похожи на (папа) <input class="blank" data-answer="папу">.</p></div>
+<div class="task"><p><span class="num">2</span>Анна старше (сестра) <input class="blank" data-answer="сестры"> на 5 лет, а брат младше (сестра) <input class="blank" data-answer="сестры"> на 3 года.</p></div>
+<div class="task"><p><span class="num">3</span>Я хочу назвать (дочь) <input class="blank" data-answer="дочь"> в честь (бабушка) <input class="blank" data-answer="бабушки">.</p></div>
+<div class="task"><p><span class="num">4</span>У нас многодетная семья: у родителей четверо детей — два сына и две (дочь) <input class="blank" data-answer="дочери">.</p></div>
+<div class="task"><p><span class="num">5</span>Мои дети — близнецы. Они похожи друг на друга как две (капля) <input class="blank" data-answer="капли"> (вода) <input class="blank" data-answer="воды">.</p></div>
+<div class="task"><p><span class="num">6</span>Катя похожа на (бабушка) <input class="blank" data-answer="бабушку">, а её сёстры похожи на (дедушка) <input class="blank" data-answer="дедушку">.</p></div>
+<div class="task"><p><span class="num">7</span>Мой брат старше (я) <input class="blank" data-answer="меня"> на 7 лет, а я младше (он) <input class="blank" data-answer="него"> на 7 лет.</p></div>
+<div class="task"><p><span class="num">8</span>Родители назвали (сын) <input class="blank" data-answer="сына"> в честь (дедушка) <input class="blank" data-answer="дедушки">, а (дочь) <input class="blank" data-answer="дочь"> — в честь (бабушка) <input class="blank" data-answer="бабушки">.</p></div>
+<div class="task"><p><span class="num">9</span>В нашей семье я единственный ребёнок. У меня нет (брат) <input class="blank" data-answer="брата"> и (сестра) <input class="blank" data-answer="сестры">.</p></div>
+<div class="task"><p><span class="num">10</span>Эти девочки очень похожи на (мама) <input class="blank" data-answer="маму">. А их братья похожи на (папа) <input class="blank" data-answer="папу">.</p></div>
+<div class="task"><p><span class="num">11</span>Моя бабушка старше (дедушка) <input class="blank" data-answer="дедушки"> на 2 года, но выглядит моложе (он) <input class="blank" data-answer="него">.</p></div>
+<div class="task"><p><span class="num">12</span>Родители назвали близнецов одинаковыми именами? Нет, они назвали (девочка) <input class="blank" data-answer="девочку"> в честь (прабабушка) <input class="blank" data-answer="прабабушки">, а (мальчик) <input class="blank" data-answer="мальчика"> — в честь (прадедушка) <input class="blank" data-answer="прадедушки">.</p></div>
+<div class="actions"><button onclick="checkSection('ex1')">Проверить ответы</button><button class="secondary" onclick="showAnswers('ex1')">Показать ответы</button><button class="ghost" onclick="resetSection('ex1')">Сбросить</button><span class="score" id="score-ex1"></span></div>
+<div class="answerbox" id="answers-ex1"></div>
+</section>
+
+<section class="section" id="ex2">
+<h2>2. Вставьте одно подходящее слово</h2>
+<p class="sub">Заполните каждый пропуск одним словом. Обратите внимание на предлоги и форму слов.</p>
+<div class="task"><p><span class="num">1</span>Маша очень похожа <input class="blank" data-answer="на"> свою маму, а её брат похож на папу.</p></div>
+<div class="task"><p><span class="num">2</span>Анна старше сестры <input class="blank" data-answer="на"> пять лет, а брат младше сестры на три года.</p></div>
+<div class="task"><p><span class="num">3</span>Родители хотят назвать дочь <input class="blank" data-answer="в"> честь бабушки.</p></div>
+<div class="task"><p><span class="num">4</span>У нас <input class="blank" data-answer="многодетная"> семья: три сына и две дочери.</p></div>
+<div class="task"><p><span class="num">5</span>Мои дети — близнецы. Они похожи друг на друга как две капли <input class="blank" data-answer="воды">.</p></div>
+<div class="task"><p><span class="num">6</span>Катя <input class="blank" data-answer="похожа"> на маму, а её братья похожи на папу.</p></div>
+<div class="task"><p><span class="num">7</span>Мой брат старше меня на семь лет, а я <input class="blank" data-answer="младше"> его на семь лет.</p></div>
+<div class="task"><p><span class="num">8</span>У Оли <input class="blank" data-answer="неполная"> семья. Она живёт только с мамой.</p></div>
+<div class="task"><p><span class="num">9</span>В нашей семье я единственный <input class="blank" data-answer="ребёнок">. У меня нет ни брата, ни сестры.</p></div>
+<div class="task"><p><span class="num">10</span>Эти девочки — близнецы. Они похожи друг на друга <input class="blank" data-answer="как"> две капли воды.</p></div>
+<div class="task"><p><span class="num">11</span>Как вы хотите <input class="blank" data-answer="назвать"> своего сына? Мы хотим назвать его в честь дедушки.</p></div>
+<div class="task"><p><span class="num">12</span>Мои родители назвали меня в <input class="blank" data-answer="честь"> прабабушки, а сестру — в честь бабушки.</p></div>
+<div class="actions"><button onclick="checkSection('ex2')">Проверить ответы</button><button class="secondary" onclick="showAnswers('ex2')">Показать ответы</button><button class="ghost" onclick="resetSection('ex2')">Сбросить</button><span class="score" id="score-ex2"></span></div>
+<div class="answerbox" id="answers-ex2"></div>
+</section>
+
+<section class="section" id="ex3">
+<h2>3. Любовь и отношения: предлоги и формы</h2>
+<p class="sub">Вставьте одно слово — предлог или нужную форму слова.</p>
+<div class="task"><p><span class="num">1</span>Мария влюбилась <input class="blank" data-answer="в"> своего однокурсника ещё в университете.</p></div>
+<div class="task"><p><span class="num">2</span>Анна хочет выйти замуж <input class="blank" data-answer="за"> своего любимого человека.</p></div>
+<div class="task"><p><span class="num">3</span>Родители воспитывают <input class="blank" data-answer="троих"> детей.</p></div>
+<div class="task"><p><span class="num">4</span>Иван женился <input class="blank" data-answer="на"> своей однокласснице пять лет назад.</p></div>
+<div class="task"><p><span class="num">5</span>После десяти лет брака они решили развестись <input class="blank" data-answer="друг"> с другом.</p></div>
+<div class="task"><p><span class="num">6</span>Маша часто ссорится <input class="blank" data-answer="с"> младшей сестрой из-за мелочей.</p></div>
+<div class="task"><p><span class="num">7</span>После ссоры родители всегда мирятся <input class="blank" data-answer="друг"> с другом.</p></div>
+<div class="task"><p><span class="num">8</span>Когда Андрей учился в школе, он влюбился <input class="blank" data-answer="в"> свою одноклассницу.</p></div>
+<div class="task"><p><span class="num">9</span>Олег поссорился <input class="blank" data-answer="со"> своей женой и уже неделю с ней не разговаривает.</p></div>
+<div class="task"><p><span class="num">10</span>Катя влюбилась <input class="blank" data-answer="в"> своего коллегу и скоро собирается выйти <input class="blank" data-answer="за"> него замуж.</p></div>
+<div class="actions"><button onclick="checkSection('ex3')">Проверить ответы</button><button class="secondary" onclick="showAnswers('ex3')">Показать ответы</button><button class="ghost" onclick="resetSection('ex3')">Сбросить</button><span class="score" id="score-ex3"></span></div>
+<div class="answerbox" id="answers-ex3"></div>
+</section>
+
+<section class="section" id="ex4">
+<h2>4. Любовь и отношения: выберите глагол</h2>
+<p class="sub">Выберите подходящий по смыслу глагол в правильной форме.</p>
+<div class="task"><p><span class="num">1</span>Когда Анна училась в университете, она <select class="blank" data-answer="влюбилась"><option value="">Выберите…</option><option>влюблялась</option><option>влюбилась</option><option>жениться</option></select> в своего однокурсника.</p></div>
+<div class="task"><p><span class="num">2</span>Мария очень любит своего молодого человека и мечтает <select class="blank" data-answer="выйти"><option value="">Выберите…</option><option>выходить</option><option>выйти</option><option>развестись</option></select> за него замуж.</p></div>
+<div class="task"><p><span class="num">3</span>Мои родители уже 20 лет <select class="blank" data-answer="воспитывают"><option value="">Выберите…</option><option>воспитывают</option><option>воспитали</option><option>ссорятся</option></select> троих детей.</p></div>
+<div class="task"><p><span class="num">4</span>Иван очень любит свою девушку и хочет <select class="blank" data-answer="жениться"><option value="">Выберите…</option><option>жениться</option><option>развестись</option><option>поссориться</option></select> на ней в следующем году.</p></div>
+<div class="task"><p><span class="num">5</span>Они больше не любят друг друга и хотят <select class="blank" data-answer="развестись"><option value="">Выберите…</option><option>пожениться</option><option>развестись</option><option>помириться</option></select> друг с другом.</p></div>
+<div class="task"><p><span class="num">6</span>Моя сестра часто <select class="blank" data-answer="ссорится"><option value="">Выберите…</option><option>мирится</option><option>ссорится</option><option>влюбляется</option></select> со своим мужем из-за домашних обязанностей.</p></div>
+<div class="task"><p><span class="num">7</span>После каждой ссоры друзья быстро <select class="blank" data-answer="мирятся"><option value="">Выберите…</option><option>разводятся</option><option>мирятся</option><option>женятся</option></select> друг с другом.</p></div>
+<div class="task"><p><span class="num">8</span>Когда Сергей увидел Елену, он сразу <select class="blank" data-answer="влюбился"><option value="">Выберите…</option><option>влюбился</option><option>воспитал</option><option>развёлся</option></select> в неё.</p></div>
+<div class="task"><p><span class="num">9</span>Моя подруга хочет <select class="blank" data-answer="выйти"><option value="">Выберите…</option><option>выйти</option><option>жениться</option><option>ссориться</option></select> замуж за своего коллегу.</p></div>
+<div class="task"><p><span class="num">10</span>После серьёзной ссоры Антон не разговаривал с женой три дня, но потом они <select class="blank" data-answer="помирились"><option value="">Выберите…</option><option>поссорились</option><option>помирились</option><option>развелись</option></select>.</p></div>
+<div class="task"><p><span class="num">11</span>Моя подруга не хочет <select class="blank" data-answer="разводиться"><option value="">Выберите…</option><option>жениться</option><option>разводиться</option><option>влюбляться</option></select> с мужем, потому что они всё ещё любят друг друга.</p></div>
+<div class="task"><p><span class="num">12</span>Раньше Катя и Максим часто <select class="blank" data-answer="ссорились"><option value="">Выберите…</option><option>ссорились</option><option>поженились</option><option>воспитывали</option></select>, но теперь они живут вместе и почти никогда не спорят.</p></div>
+<div class="actions"><button onclick="checkSection('ex4')">Проверить ответы</button><button class="secondary" onclick="showAnswers('ex4')">Показать ответы</button><button class="ghost" onclick="resetSection('ex4')">Сбросить</button><span class="score" id="score-ex4"></span></div>
+<div class="answerbox" id="answers-ex4"></div>
+</section>
+
+<section class="section">
+<h2>5. Поговорим о семье и отношениях</h2>
+<p class="sub">Ответьте на вопросы полными предложениями. Примеры ответов можно открыть после каждого вопроса.</p>
+<div class="questions">
+<div class="qcard"><strong>1. На кого вы похожи?</strong>На кого похожи ваши родители?</div>
+<div class="qcard"><strong>2. Кто старше вас в вашей семье?</strong>На сколько лет этот человек старше вас?</div>
+<div class="qcard"><strong>3. Есть ли у вас братья и сёстры?</strong>Вы старше или младше них?</div>
+<div class="qcard"><strong>4. Вы единственный ребёнок в семье?</strong>Хотели бы вы иметь большую семью?</div>
+<div class="qcard"><strong>5. Как вы думаете, близнецы всегда похожи друг на друга?</strong>Почему?</div>
+<div class="qcard"><strong>6. Как вы думаете, в честь кого лучше называть детей?</strong>Почему?</div>
+<div class="qcard"><strong>7. Что важно делать родителям, когда они воспитывают детей?</strong></div>
+<div class="qcard"><strong>8. Почему люди иногда ссорятся с близкими?</strong>Как можно помириться?</div>
+
+</div>
+<div class="actions"><button class="secondary" onclick="document.getElementById('samples').classList.toggle('show')">Показать / скрыть примерные ответы</button></div>
+<div class="answerbox" id="samples">
+<p><b>1.</b> Я похож(а) на маму, а мой брат похож на папу.</p>
+<p><b>2.</b> Моя сестра старше меня на три года.</p>
+<p><b>3.</b> У меня есть младший брат. Он младше меня на пять лет.</p>
+<p><b>4.</b> Да, я единственный ребёнок в семье. / Нет, у меня есть две сестры.</p>
+<p><b>5.</b> Не всегда. Иногда близнецы похожи как две капли воды, а иногда они совсем разные.</p>
+<p><b>6.</b> Мне кажется, можно назвать ребёнка в честь бабушки или дедушки.</p>
+<p><b>7.</b> Родители должны любить детей, заботиться о них и хорошо их воспитывать.</p>
+<p><b>8.</b> Люди иногда ссорятся из-за разных мнений. Чтобы помириться, нужно поговорить и извиниться.</p>
+
+</div>
+<div class="note">Совет: старайтесь использовать в ответах конструкции <b>похож на / похожа на</b>, <b>старше / младше на … лет</b>, <b>в честь кого</b>, <b>влюбиться в кого</b>, <b>выйти замуж за кого</b>, <b>жениться на ком</b>, <b>ссориться / мириться с кем</b>.</div>
+</section>
+<footer>Тренажёр по русскому языку · Семья и отношения · А2</footer>
+</main>
+<script>
+function norm(s){return (s||"").trim().toLocaleLowerCase("ru").replace(/[ё]/g,"е").replace(/[.,!?;:]/g,"").replace(/\s+/g," ")}
+function checkSection(id){
+ const sec=document.getElementById(id), fields=[...sec.querySelectorAll("input.blank,select.blank")];
+ let good=0;
+ fields.forEach(el=>{
+   const ok=norm(el.value)===norm(el.dataset.answer);
+   el.style.borderBottomColor=el.value?(ok?"#198754":"#c43d4d"):"#9a8be0";
+   const task=el.closest(".task");
+   let fb=task.querySelector(".feedback");
+   if(!fb){fb=document.createElement("div");fb.className="feedback";task.appendChild(fb)}
+   fb.textContent=ok?"Верно!":(el.value?"Попробуйте ещё раз.":"Введите ответ.");
+   fb.className="feedback "+(ok?"correct":(el.value?"wrong":""));
+   if(ok)good++;
+ });
+ document.getElementById("score-"+id).textContent=`Правильно: ${good} из ${fields.length}`;
+}
+function showAnswers(id){
+ const sec=document.getElementById(id), box=document.getElementById("answers-"+id);
+ const fields=[...sec.querySelectorAll("input.blank,select.blank")];
+ box.innerHTML="<b>Ответы:</b><ol>"+fields.map(el=>`<li>${el.dataset.answer}</li>`).join("")+"</ol>";
+ box.classList.toggle("show");
+}
+function resetSection(id){
+ const sec=document.getElementById(id);
+ sec.querySelectorAll("input.blank,select.blank").forEach(el=>{el.value="";el.style.borderBottomColor="#9a8be0"});
+ sec.querySelectorAll(".feedback").forEach(el=>el.remove());
+ document.getElementById("score-"+id).textContent="";
+ const box=document.getElementById("answers-"+id);if(box){box.classList.remove("show");box.innerHTML=""}
+}
+</script>
+</body>
+</html>
