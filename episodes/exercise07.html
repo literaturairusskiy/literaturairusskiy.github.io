@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Семья, отношения и путешествия</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f3e8;
+  color: #333;
+  line-height: 1.65;
+  margin: 0;
+  padding: 30px 16px;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 23px;
+  margin-top: 40px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #c9c4ad;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 28px;
+}
+
+.intro {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.exercise {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.task {
+  margin: 15px 0;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #888;
+  padding: 5px;
+  font-size: 15px;
+  width: 180px;
+  background: transparent;
+}
+
+select {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background: white;
+}
+
+.options {
+  background: #f4f3e8;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+button {
+  background: #555e4b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+button:hover {
+  background: #414939;
+}
+
+.result {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+details {
+  background: #f4f3e8;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.answer {
+  color: #435c3e;
+  font-weight: bold;
+}
+
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.word-bank span {
+  background: #e9e8dc;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+.question {
+  margin: 20px 0;
+}
+
+.example {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media(max-width:600px) {
+  .exercise { padding: 17px; }
+  h1 { font-size: 25px; }
+  input[type="text"] { width: 130px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Семья, отношения и путешествия</h1>
+<p class="intro">Лексика, грамматика и разговорная практика</p>
+
+<!-- ТЕМА 1 -->
+<h2>1. Семья и отношения</h2>
+
+<div class="exercise">
+<h3>Упражнение 1. Определите падеж</h3>
+
+<p>Прочитайте предложения. Определите падеж выделенного существительного или местоимения.</p>
+
+<div class="task">
+1. Я влюбилась <b>в тебя</b>.
+<select id="f1">
+<option value="">Выберите падеж</option>
+<option>Именительный (П1)</option>
+<option>Родительный (П2)</option>
+<option>Дательный (П3)</option>
+<option>Винительный (П4)</option>
+<option>Творительный (П5)</option>
+<option>Предложный (П6)</option>
+</select>
+</div>
+
+<div class="task">
+2. Она вышла замуж <b>за иностранца</b>.
+<select id="f2">
+<option value="">Выберите падеж</option>
+<option>Именительный (П1)</option>
+<option>Родительный (П2)</option>
+<option>Дательный (П3)</option>
+<option>Винительный (П4)</option>
+<option>Творительный (П5)</option>
+<option>Предложный (П6)</option>
+</select>
+</div>
+
+<div class="task">
+3. Они воспитывают <b>двух детей</b>.
+<select id="f3">
+<option value="">Выберите падеж</option>
+<option>Именительный (П1)</option>
+<option>Родительный (П2)</option>
+<option>Дательный (П3)</option>
+<option>Винительный (П4)</option>
+<option>Творительный (П5)</option>
+<option>Предложный (П6)</option>
+</select>
+</div>
+
+<div class="task">
+4. Он женился <b>на моей подруге</b>.
+<select id="f4">
+<option value="">Выберите падеж</option>
+<option>Именительный (П1)</option>
+<option>Родительный (П2)</option>
+<option>Дательный (П3)</option>
+<option>Винительный (П4)</option>
+<option>Творительный (П5)</option>
+<option>Предложный (П6)</option>
+</select>
+</div>
+
+<div class="task">
+5. Она развелась <b>с мужем</b>.
+<select id="f5">
+<option value="">Выберите падеж</option>
+<option>Именительный (П1)</option>
+<option>Родительный (П2)</option>
+<option>Дательный (П3)</option>
+<option>Винительный (П4)</option>
+<option>Творительный (П5)</option>
+<option>Предложный (П6)</option>
+</select>
+</div>
+
+<div class="task">
+6. Я часто ссорюсь <b>с сестрой</b>.
+<select id="f6">
+<option value="">Выберите падеж</option>
+<option>Именительный (П1)</option>
+<option>Родительный (П2)</option>
+<option>Дательный (П3)</option>
+<option>Винительный (П4)</option>
+<option>Творительный (П5)</option>
+<option>Предложный (П6)</option>
+</select>
+</div>
+
+<div class="task">
+7. Мы уже помирились <b>с родителями</b>.
+<select id="f7">
+<option value="">Выберите падеж</option>
+<option>Именительный (П1)</option>
+<option>Родительный (П2)</option>
+<option>Дательный (П3)</option>
+<option>Винительный (П4)</option>
+<option>Творительный (П5)</option>
+<option>Предложный (П6)</option>
+</select>
+</div>
+
+<button onclick="checkFamily()">Проверить ответы</button>
+<div id="familyResult" class="result"></div>
+
+<details>
+<summary>Показать ответы</summary>
+<ol>
+<li class="answer">Винительный падеж (П4).</li>
+<li class="answer">Винительный падеж (П4).</li>
+<li class="answer">Винительный падеж (П4).</li>
+<li class="answer">Предложный падеж (П6).</li>
+<li class="answer">Творительный падеж (П5).</li>
+<li class="answer">Творительный падеж (П5).</li>
+<li class="answer">Творительный падеж (П5).</li>
+</ol>
+</details>
+</div>
+
+<!-- ТЕМА 2 -->
+<h2>2. Путешествия</h2>
+
+<div class="exercise">
+<h3>Упражнение 2. Заполните пропуски</h3>
+
+<p>Вставьте подходящие словосочетания в правильной форме.</p>
+
+<div class="word-bank">
+  <span>загорать</span>
+  <span>изучать иностранный язык</span>
+  <span>отдыхать дома</span>
+  <span>осматривать достопримечательности</span>
+  <span>брать палатку</span>
+  <span>ездить за границу</span>
+  <span>летать на самолёте</span>
+  <span>отдыхать за границей</span>
+</div>
+
+<div class="task">
+1. Летом многие люди любят
+<input type="text" id="t1">,
+чтобы увидеть новые страны.
+</div>
+
+<div class="task">
+2. Туристы приезжают в Париж и целый день
+<input type="text" id="t2">.
+</div>
+
+<div class="task">
+3. Мои родители не любят
+<input type="text" id="t3">,
+потому что предпочитают отдыхать в России.
+</div>
+
+<div class="task">
+4. Чтобы быстро добраться до другой страны, иногда приходится
+<input type="text" id="t4">.
+</div>
+
+<div class="task">
+5. В этом году мы не поедем в отпуск, а будем
+<input type="text" id="t5">.
+</div>
+
+<div class="task">
+6. Когда мои друзья отправляются в поход, они обязательно
+<input type="text" id="t6">.
+</div>
+
+<div class="task">
+7. На пляже туристы любят
+<input type="text" id="t7"> и купаться в море.
+</div>
+
+<div class="task">
+8. Перед поездкой в Китай Анна начала
+<input type="text" id="t8">.
+</div>
+
+<button onclick="checkTravel()">Проверить ответы</button>
+<div id="travelResult" class="result"></div>
+
+<details>
+<summary>Показать ответы</summary>
+<ol>
+<li class="answer">ездить за границу</li>
+<li class="answer">осматривают достопримечательности</li>
+<li class="answer">отдыхать за границей</li>
+<li class="answer">летать на самолёте</li>
+<li class="answer">отдыхать дома</li>
+<li class="answer">берут палатку</li>
+<li class="answer">загорать</li>
+<li class="answer">изучать иностранный язык</li>
+</ol>
+</details>
+</div>
+
+<!-- СПРЯЖЕНИЕ -->
+<div class="exercise">
+<h3>Упражнение 3. Проспрягайте глаголы</h3>
+
+<p>Вставьте пропущенные окончания или формы глаголов.</p>
+
+<h4>1. Осматривать (НСВ)</h4>
+<div class="task">
+Я осматриваю<br>
+Ты осматрива<input id="c1" type="text"><br>
+Он / она осматривает<br>
+Мы осматриваем<br>
+Вы осматрива<input id="c2" type="text"><br>
+Они осматрива<input id="c3" type="text">
+</div>
+
+<h4>2. Ездить (НСВ)</h4>
+<div class="task">
+Я <input id="c4" type="text"><br>
+Ты ездишь<br>
+Он / она ездит<br>
+Мы ездим<br>
+Вы <input id="c5" type="text"><br>
+Они ездят
+</div>
+
+<h4>3. Останавливаться (НСВ)</h4>
+<div class="task">
+Я останавливаюсь<br>
+Ты останавлива<input id="c6" type="text"><br>
+Он / она останавливается<br>
+Мы останавлива<input id="c7" type="text"><br>
+Вы останавливаетесь<br>
+Они останавливаются
+</div>
+
+<button onclick="checkConjugation()">Проверить ответы</button>
+<div id="conjugationResult" class="result"></div>
+
+<details>
+<summary>Показать ответы</summary>
+<p>1. Осматривать:</p>
+<ul>
+<li class="answer">Ты осматриваешь.</li>
+<li class="answer">Вы осматриваете.</li>
+<li class="answer">Они осматривают.</li>
+</ul>
+
+<p>2. Ездить:</p>
+<ul>
+<li class="answer">Я езжу.</li>
+<li class="answer">Вы ездите.</li>
+</ul>
+
+<p>3. Останавливаться:</p>
+<ul>
+<li class="answer">Ты останавливаешься.</li>
+<li class="answer">Мы останавливаемся.</li>
+</ul>
+</details>
+</div>
+
+<!-- РОДИТЕЛЬНЫЙ ПАДЕЖ -->
+<div class="exercise">
+<h3>Упражнение 4. Родительный падеж множественного числа</h3>
+
+<p>Поставьте слова в скобках в правильную форму. </p>
+
+<div class="task">
+1. В этом городе очень много
+<input type="text" id="g1" placeholder="(музей)">.
+</div>
+
+<div class="task">
+2. В нашем районе мало
+<input type="text" id="g2" placeholder="(гостиница)">.
+</div>
+
+<div class="task">
+3. Во время путешествия мы посетили несколько
+<input type="text" id="g3" placeholder="(город)">.
+</div>
+
+<div class="task">
+4. В этом маленьком городе нет
+<input type="text" id="g4" placeholder="(аэропорт)">.
+</div>
+
+<div class="task">
+5. В центре много красивых
+<input type="text" id="g5" placeholder="(улица)">.
+</div>
+
+<div class="task">
+6. В этом районе мало
+<input type="text" id="g6" placeholder="(парк)">.
+</div>
+
+<div class="task">
+7. У нас нет
+<input type="text" id="g7" placeholder="(билет)">,
+поэтому мы не можем поехать на экскурсию.
+</div>
+
+<div class="task">
+8. В городе есть несколько интересных
+<input type="text" id="g8" placeholder="(достопримечательность)">.
+</div>
+
+<div class="task">
+9. В этом году мы посетили много европейских
+<input type="text" id="g9" placeholder="(страна)">.
+</div>
+
+<div class="task">
+10. В маленьком городе нет
+<input type="text" id="g10" placeholder="(вокзал)">.
+</div>
+
+<button onclick="checkGenitive()">Проверить ответы</button>
+<div id="genitiveResult" class="result"></div>
+
+<details>
+<summary>Показать ответы</summary>
+<ol>
+<li class="answer">музеев</li>
+<li class="answer">гостиниц</li>
+<li class="answer">городов</li>
+<li class="answer">аэропорта</li>
+<li class="answer">улиц</li>
+<li class="answer">парков</li>
+<li class="answer">билетов</li>
+<li class="answer">достопримечательностей</li>
+<li class="answer">стран</li>
+<li class="answer">вокзала</li>
+</ol>
+</details>
+</div>
+
+<!-- РАЗГОВОРНАЯ ПРАКТИКА -->
+<h2>3. Разговорная практика</h2>
+
+<div class="exercise">
+<p>Ответьте на вопросы. Используйте примерные ответы как образец.</p>
+
+<div class="question">
+<b>1. Вы любите путешествовать?</b>
+<p class="example">Примерный ответ: Да, очень люблю. Мне нравится открывать новые страны, знакомиться с культурой и пробовать местную кухню.</p>
+</div>
+
+<div class="question">
+<b>2. Как часто вы ездите за границу?</b>
+<p class="example">Примерный ответ: Обычно я езжу за границу один-два раза в год. Но иногда путешествую чаще.</p>
+</div>
+
+<div class="question">
+<b>3. Какие страны вы уже посетили?</b>
+<p class="example">Примерный ответ: Я уже посетил несколько стран: Италию, Францию, Испанию и Турцию.</p>
+</div>
+
+<div class="question">
+<b>4. Вы обычно ездите на машине / поезде или летаете на самолёте?</b>
+<p class="example">Примерный ответ: Обычно я летаю на самолёте, потому что так быстрее и удобнее. Но иногда предпочитаю путешествовать на поезде.</p>
+</div>
+
+<div class="question">
+<b>5. Где вы обычно останавливаетесь: в гостинице, в хостеле, в квартире, у друзей?</b>
+<p class="example">Примерный ответ: Обычно я останавливаюсь в гостинице или снимаю квартиру. Мне нравится, когда есть отдельная кухня и достаточно места.</p>
+</div>
+
+<div class="question">
+<b>6. Что вам нравится больше: загорать на пляже, плавать в море или осматривать достопримечательности, изучать что-нибудь новое?</b>
+<p class="example">Примерный ответ: Больше всего мне нравится осматривать достопримечательности и изучать что-нибудь новое. Я люблю узнавать историю других стран.</p>
+</div>
+
+
+<div class="question">
+  <b>7. Как вы думаете, что значит выражение «жить душа в душу»?</b>
+  <p class="example">
+    Примерный ответ: Это значит жить дружно, понимать друг друга, поддерживать друг друга и редко ссориться.
+  </p>
+</div>
+
+
+<div class="question">
+  <b>8. Из-за чего люди могут жить как кошка с собакой?</b>
+  <p class="example">
+    Примерный ответ: Люди могут постоянно ссориться из-за разных характеров, бытовых проблем, ревности или недопонимания.
+  </p>
+</div>
+
+<div class="question">
+  <b>9. Вы когда-нибудь жили с кем-нибудь как кошка с собакой?</b>
+  <p class="example">
+    Примерный ответ: Да, когда я учился в университете, я жил с соседом по комнате. Мы постоянно спорили из-за уборки и шума.
+  </p>
+</div>
+
+
+</div>
+
+</div>
+
+<script>
+function normalize(s) {
+  return s.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function checkFamily() {
+  const answers = [
+    "Винительный (П4)",
+    "Винительный (П4)",
+    "Винительный (П4)",
+    "Предложный (П6)",
+    "Творительный (П5)",
+    "Творительный (П5)",
+    "Творительный (П5)"
+  ];
+
+  let score = 0;
+  answers.forEach((a, i) => {
+    if (document.getElementById("f" + (i+1)).value === a) score++;
+  });
+
+  document.getElementById("familyResult").textContent =
+    "Правильных ответов: " + score + " из 7.";
+}
+
+function checkTravel() {
+  const answers = [
+    ["ездить за границу"],
+    ["осматривают достопримечательности"],
+    ["отдыхать за границей"],
+    ["летать на самолёте", "летать на самолете"],
+    ["отдыхать дома"],
+    ["берут палатку"],
+    ["загорать"],
+    ["изучать иностранный язык"]
+  ];
+
+  let score = 0;
+  answers.forEach((a, i) => {
+    const value = normalize(document.getElementById("t" + (i+1)).value);
+    if (a.includes(value)) score++;
+  });
+
+  document.getElementById("travelResult").textContent =
+    "Правильных ответов: " + score + " из 8.";
+}
+
+function checkConjugation() {
+  const answers = {
+    c1: ["ешь"],
+    c2: ["ете"],
+    c3: ["ют"],
+    c4: ["езжу"],
+    c5: ["ездите"],
+    c6: ["ешься"],
+    c7: ["емся"]
+  };
+
+  let score = 0;
+  Object.keys(answers).forEach(id => {
+    if (answers[id].includes(normalize(document.getElementById(id).value))) score++;
+  });
+
+  document.getElementById("conjugationResult").textContent =
+    "Правильных ответов: " + score + " из 7.";
+}
+
+function checkGenitive() {
+  const answers = [
+    ["музеев"],
+    ["гостиниц"],
+    ["городов"],
+    ["аэропорта"],
+    ["улиц"],
+    ["парков"],
+    ["билетов"],
+    ["достопримечательностей"],
+    ["стран"],
+    ["вокзала"]
+  ];
+
+  let score = 0;
+  answers.forEach((a, i) => {
+    const value = normalize(document.getElementById("g" + (i+1)).value);
+    if (a.includes(value)) score++;
+  });
+
+  document.getElementById("genitiveResult").textContent =
+    "Правильных ответов: " + score + " из 10.";
+}
+</script>
+
+</body>
+</html>
