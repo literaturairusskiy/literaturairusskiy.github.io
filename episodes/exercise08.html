@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Грамматический тренажёр: город, отель и сравнения</title>
+<style>
+:root{--navy:#1d3b57;--blue:#2867a8;--pale:#edf4fa;--line:#d8e2ec;--text:#243447;--muted:#66788a;--green:#18794e;--red:#b42318}
+*{box-sizing:border-box}body{margin:0;background:#f3f6f9;color:var(--text);font:16px/1.6 Arial,sans-serif}
+main{max-width:980px;margin:auto;padding:26px 18px 60px}
+header{background:var(--navy);color:white;border-radius:18px;padding:28px;margin-bottom:20px}
+h1{font-size:clamp(26px,4vw,36px);line-height:1.2;margin:0 0 8px}header p{margin:0;color:#e0eaf2}
+section{background:white;border:1px solid var(--line);border-radius:15px;padding:22px;margin:18px 0;box-shadow:0 3px 12px #1d3b5709}
+h2{font-size:22px;color:var(--navy);margin:0 0 6px}.intro{color:var(--muted);margin:0 0 16px}
+.task{border-top:1px solid #edf1f5;padding:13px 0}.task:first-of-type{border-top:0}
+.prompt{margin-bottom:7px}.num{display:inline-block;min-width:28px;color:var(--blue);font-weight:bold}
+input.answer,textarea.answer{font:inherit;border:1px solid #bdcbd9;border-radius:8px;padding:9px 11px;width:min(100%,520px);color:var(--text);background:#fff}
+input.short{width:min(100%,340px)}textarea.answer{min-height:78px;resize:vertical}
+.hint{font-size:13px;color:var(--muted);margin-top:4px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+button{border:0;border-radius:9px;padding:10px 15px;font:inherit;font-weight:bold;cursor:pointer}
+.check{background:var(--blue);color:white}.reset{background:#eaf0f6;color:#29445f}
+.feedback{font-weight:bold;margin-top:10px}.correct{color:var(--green)}.wrong{color:var(--red)}
+details{background:#f7f9fb;border-radius:9px;padding:11px 14px;margin-top:14px}summary{font-weight:bold;cursor:pointer}
+.wordbank{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 18px}
+.wordbank span{background:var(--pale);border:1px solid #dce8f3;border-radius:7px;padding:4px 9px}
+.example{background:#f6f9fc;border-left:3px solid var(--blue);padding:10px 13px;border-radius:5px;margin:10px 0}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:25px}
+@media(max-width:600px){section{padding:16px}.task{padding:11px 0}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>Город, отель и путешествия</h1>
+<p>Тренируем числительные, родительный падеж, сравнительную степень и конструкции сравнения</p>
+</header>
+
+<section id="task1">
+<h2>Задание 1. Числительные и слова количества</h2>
+<p class="intro">Поставьте существительное в правильную форму после числа или слова. Вводите только форму существительного.</p>
+<div class="example"><b>Образец:</b> 1 город · 2 города · 5 городов · много городов · мало городов · несколько городов</div>
+<div class="wordbank">
+<span>го́род</span><span>па́мятник</span><span>проспе́кт</span><span>дом</span><span>у́лица</span><span>река́</span><span>зда́ние</span><span>две́рь</span><span>маши́на</span><span>парк</span><span>шко́ла</span><span>институ́т</span><span>магазин</span><span>рестора́н</span><span>бар</span><span>ча́шка</span><span>ру́чка</span><span>ночь</span><span>сло́во</span><span>кни́га</span><span>вещь</span><span>врач</span><span>инжене́р</span><span>писа́тель</span><span>худо́жник</span>
+</div>
+<div class="task"><div class="prompt"><span class="num">1.</span> 1 _____ (город)</div><input class="answer short" data-answer="город" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">2.</span> 2 _____ (город)</div><input class="answer short" data-answer="города" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">3.</span> 4 _____ (город)</div><input class="answer short" data-answer="города" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">4.</span> 5 _____ (город)</div><input class="answer short" data-answer="городов" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">5.</span> много _____ (город)</div><input class="answer short" data-answer="городов" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">6.</span> мало _____ (памятник)</div><input class="answer short" data-answer="памятников" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">7.</span> несколько _____ (проспект)</div><input class="answer short" data-answer="проспектов" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">8.</span> 3 _____ (дом)</div><input class="answer short" data-answer="дома" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">9.</span> 6 _____ (улица)</div><input class="answer short" data-answer="улиц" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">10.</span> много _____ (река)</div><input class="answer short" data-answer="рек" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">11.</span> 4 _____ (здание)</div><input class="answer short" data-answer="здания" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">12.</span> несколько _____ (дверь)</div><input class="answer short" data-answer="дверей" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">13.</span> 2 _____ (машина)</div><input class="answer short" data-answer="машины" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">14.</span> много _____ (парк)</div><input class="answer short" data-answer="парков" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">15.</span> 3 _____ (школа)</div><input class="answer short" data-answer="школы" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">16.</span> 5 _____ (институт)</div><input class="answer short" data-answer="институтов" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">17.</span> несколько _____ (магазин)</div><input class="answer short" data-answer="магазинов" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">18.</span> 4 _____ (ресторан)</div><input class="answer short" data-answer="ресторана" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">19.</span> мало _____ (бар)</div><input class="answer short" data-answer="баров" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">20.</span> 2 _____ (чашка)</div><input class="answer short" data-answer="чашки" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">21.</span> много _____ (ручка)</div><input class="answer short" data-answer="ручек" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">22.</span> 5 _____ (ночь)</div><input class="answer short" data-answer="ночей" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">23.</span> несколько _____ (слово)</div><input class="answer short" data-answer="слов" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">24.</span> 3 _____ (книга)</div><input class="answer short" data-answer="книги" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">25.</span> много _____ (вещь)</div><input class="answer short" data-answer="вещей" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">26.</span> 5 _____ (врач)</div><input class="answer short" data-answer="врачей" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">27.</span> несколько _____ (инженер)</div><input class="answer short" data-answer="инженеров" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">28.</span> 2 _____ (писатель)</div><input class="answer short" data-answer="писателя" placeholder="Форма существительного"></div>
+<div class="task"><div class="prompt"><span class="num">29.</span> мало _____ (художник)</div><input class="answer short" data-answer="художников" placeholder="Форма существительного"></div>
+<div class="actions"><button class="check" onclick="checkSection('task1')">Проверить</button><button class="reset" onclick="resetSection('task1')">Сбросить</button></div><div class="feedback" aria-live="polite"></div>
+<details><summary>Ответы</summary><p>1 город; 2 города; 3 города; 4 городов; 5 городов; 6 памятников; 7 проспектов; 8 дома; 9 улиц; 10 рек; 11 здания; 12 дверей; 13 машины; 14 парков; 15 школы; 16 институтов; 17 магазинов; 18 ресторана; 19 баров; 20 чашки; 21 ручек; 22 ночей; 23 слов; 24 книги; 25 вещей; 26 врачей; 27 инженеров; 28 писателя; 29 художников.</p></details>
+</section>
+
+<section id="task2">
+<h2>Задание 2. Родительный и винительный падежи прилагательных и местоимений</h2>
+<p class="intro">Преобразуйте слова в скобках. Обратите внимание на одушевлённые и неодушевлённые существительные.</p>
+<div class="example"><b>Образец:</b> К сожалению, в этом отеле нет <u>теннисных кортов</u> (теннисные корты).</div>
+<div class="task"><div class="prompt"><span class="num">2.</span> В отеле можно встретить _____ (знаменитые спортсмены или популярные певцы).</div><input class="answer" data-answer="знаменитых спортсменов или популярных певцов" placeholder="Полная форма"></div>
+<div class="task"><div class="prompt"><span class="num">3.</span> Вы вчера видели _____ (ваш друг, ваша подруга)?</div><input class="answer" data-answer="вашего друга, вашу подругу" placeholder="Полная форма"></div>
+<div class="task"><div class="prompt"><span class="num">4.</span> В нашем отеле нет _____ (танцевальное шоу).</div><input class="answer" data-answer="танцевального шоу" placeholder="Полная форма"></div>
+<div class="task"><div class="prompt"><span class="num">5.</span> Она должна спросить _____ (свой муж или своя дочь).</div><input class="answer" data-answer="своего мужа или свою дочь" placeholder="Полная форма"></div>
+<div class="task"><div class="prompt"><span class="num">6.</span> Вы любите _____ (финская сауна или русская баня)?</div><input class="answer" data-answer="финскую сауну или русскую баню" placeholder="Полная форма"></div>
+<div class="task"><div class="prompt"><span class="num">7.</span> В этой гостинице нет _____ (финская сауна).</div><input class="answer" data-answer="финской сауны" placeholder="Полная форма"></div>
+<div class="task"><div class="prompt"><span class="num">8.</span> В этом городе нет _____ (дорогие курорты).</div><input class="answer" data-answer="дорогих курортов" placeholder="Полная форма"></div>
+<div class="actions"><button class="check" onclick="checkSection('task2')">Проверить</button><button class="reset" onclick="resetSection('task2')">Сбросить</button></div><div class="feedback" aria-live="polite"></div>
+<details><summary>Ответы</summary><p>2. знаменитых спортсменов или популярных певцов; 3. вашего друга, вашу подругу; 4. танцевального шоу; 5. своего мужа или свою дочь; 6. финскую сауну или русскую баню; 7. финской сауны; 8. дорогих курортов.</p></details>
+</section>
+
+<section id="task3">
+<h2>Задание 3. Сравнительная степень + чем</h2>
+<p class="intro">Образуйте сравнительную степень прилагательного или наречия. После <b>чем</b> используйте именительный падеж.</p>
+<div class="example"><b>Образец:</b> Автобусы в Лондоне <u>дороже</u>, чем автобусы в Петербурге (дорогой).</div>
+<div class="task"><div class="prompt"><span class="num">2.</span> Метро в Петербурге _____, чем в Лондоне (маленький).</div><input class="answer short" data-answer="меньше" placeholder="Сравнительная степень"></div>
+<div class="task"><div class="prompt"><span class="num">3.</span> Летом в Африке _____, чем в Европе (жарко).</div><input class="answer short" data-answer="жарче" placeholder="Сравнительная степень"></div>
+<div class="task"><div class="prompt"><span class="num">4.</span> Билет на поезд _____, чем билеты на самолёт (дешёвый).</div><input class="answer short" data-answer="дешевле" placeholder="Сравнительная степень"></div>
+<div class="task"><div class="prompt"><span class="num">5.</span> Погода сегодня _____, чем вчера (хороший).</div><input class="answer short" data-answer="лучше" placeholder="Сравнительная степень"></div>
+<div class="task"><div class="prompt"><span class="num">6.</span> Аэропорт Хитроу _____, чем аэропорт Пулково (большой).</div><input class="answer short" data-answer="больше" placeholder="Сравнительная степень"></div>
+<div class="task"><div class="prompt"><span class="num">7.</span> В Берне _____, чем в Неаполе (чисто).</div><input class="answer short" data-answer="чище" placeholder="Сравнительная степень"></div>
+<div class="task"><div class="prompt"><span class="num">8.</span> Жизнь в деревне _____, чем в городе (спокойный).</div><input class="answer short" data-answer="спокойнее" placeholder="Сравнительная степень"></div>
+<div class="actions"><button class="check" onclick="checkSection('task3')">Проверить</button><button class="reset" onclick="resetSection('task3')">Сбросить</button></div><div class="feedback" aria-live="polite"></div>
+<details><summary>Ответы</summary><p>2. меньше; 3. жарче; 4. дешевле; 5. лучше; 6. больше; 7. чище; 8. спокойнее.</p></details>
+</section>
+
+<section id="task4">
+<h2>Задание 4. Сравниваем: чем? или родительный падеж?</h2>
+<p class="intro">Прочитайте диалог. Сначала задайте вопрос с конструкцией <b>больше, чем Прага</b>, затем ответьте двумя способами: с <b>чем</b> и с родительным падежом.</p>
+<div class="example">
+<b>Образец:</b><br>
+— Пекин больше, чем Прага?<br>
+— Да, Пекин больше, чем Прага.<br>
+— Да, Пекин больше Праги.
+</div>
+<p class="intro">Дополните диалоги. В каждой строке напишите нужную форму целиком.</p>
+<div class="task">
+<div class="prompt"><span class="num">1.</span> — Москва красивее, чем Рига?<br>— Да, Москва красивее, чем _____ (Рига).<br>— Да, Москва красивее _____ (Рига).</div>
+<input class="answer" data-answer="рига" placeholder="Форма после «чем»">
+<input class="answer" data-answer="риги" placeholder="Родительный падеж">
+</div>
+<div class="task">
+<div class="prompt"><span class="num">2.</span> — Берлин больше, чем Таллин?<br>— Да, Берлин больше, чем _____ (Таллин).<br>— Да, Берлин больше _____ (Таллин).</div>
+<input class="answer" data-answer="таллин" placeholder="Форма после «чем»">
+<input class="answer" data-answer="таллина" placeholder="Родительный падеж">
+</div>
+<div class="task">
+<div class="prompt"><span class="num">3.</span> — Прага старше, чем Хельсинки?<br>— Да, Прага старше, чем _____ (Хельсинки).<br>— Да, Прага старше _____ (Хельсинки).</div>
+<input class="answer" data-answer="хельсинки" placeholder="Форма после «чем»">
+<input class="answer" data-answer="хельсинки" placeholder="Родительный падеж">
+</div>
+<div class="task">
+<div class="prompt"><span class="num">4.</span> — Петербург красивее, чем Казань?<br>— Да, Петербург красивее, чем _____ (Казань).<br>— Да, Петербург красивее _____ (Казань).</div>
+<input class="answer" data-answer="казань" placeholder="Форма после «чем»">
+<input class="answer" data-answer="казани" placeholder="Родительный падеж">
+</div>
+<div class="task">
+<div class="prompt"><span class="num">5.</span> — Этот отель дороже, чем тот отель?<br>— Да, этот отель дороже, чем _____ (тот отель).<br>— Да, этот отель дороже _____ (тот отель).</div>
+<input class="answer" data-answer="тот отель" placeholder="Форма после «чем»">
+<input class="answer" data-answer="того отеля" placeholder="Родительный падеж">
+</div>
+<div class="task">
+<div class="prompt"><span class="num">6.</span> — Новая улица шире, чем старая улица?<br>— Да, новая улица шире, чем _____ (старая улица).<br>— Да, новая улица шире _____ (старая улица).</div>
+<input class="answer" data-answer="старая улица" placeholder="Форма после «чем»">
+<input class="answer" data-answer="старой улицы" placeholder="Родительный падеж">
+</div>
+<div class="task">
+<div class="prompt"><span class="num">7.</span> — Жизнь в деревне спокойнее, чем жизнь в городе?<br>— Да, жизнь в деревне спокойнее, чем _____ (жизнь в городе).<br>— Да, жизнь в деревне спокойнее _____ (жизнь в городе).</div>
+<input class="answer" data-answer="жизнь в городе" placeholder="Форма после «чем»">
+<input class="answer" data-answer="жизни в городе" placeholder="Родительный падеж">
+</div>
+<div class="actions"><button class="check" onclick="checkSection('task4')">Проверить</button><button class="reset" onclick="resetSection('task4')">Сбросить</button></div><div class="feedback" aria-live="polite"></div>
+<details><summary>Ответы</summary>
+<p>1. Рига; Риги. 2. Таллин; Таллина. 3. Хельсинки; Хельсинки. 4. Казань; Казани. 5. тот отель; того отеля. 6. старая улица; старой улицы. 7. жизнь в городе; жизни в городе.</p>
+</details>
+</section>
+
+<section id="task5">
+<h2>Задание 5. Разговорная практика</h2>
+<p class="intro">Ответьте полными предложениями. Используйте числительные, слова количества, родительный падеж и сравнительные конструкции. Можно работать в парах: один задаёт вопрос, другой отвечает.</p>
+<div class="task"><div class="prompt"><span class="num">1.</span> Сколько парков, музеев и театров в вашем городе?</div><textarea class="answer" placeholder="Например: В моём городе много парков, несколько музеев и пять театров."></textarea></div>
+<div class="task"><div class="prompt"><span class="num">2.</span> Чего нет в вашем районе? Чего там мало?</div><textarea class="answer" placeholder="Например: В моём районе нет больших парков. Там мало ресторанов."></textarea></div>
+<div class="task"><div class="prompt"><span class="num">3.</span> Что в вашем городе интереснее, чем в другом городе?</div><textarea class="answer" placeholder="Например: Архитектура в моём городе интереснее, чем архитектура в соседнем городе."></textarea></div>
+<div class="task"><div class="prompt"><span class="num">4.</span> Что в вашем городе дороже / дешевле, чем в столице?</div><textarea class="answer" placeholder="Например: Общественный транспорт в моём городе дешевле транспорта в столице."></textarea></div>
+<div class="task"><div class="prompt"><span class="num">5.</span> Где спокойнее: в деревне или в большом городе? Почему?</div><textarea class="answer" placeholder="Например: Жизнь в деревне спокойнее жизни в большом городе, потому что там меньше машин и людей."></textarea></div>
+<div class="task"><div class="prompt"><span class="num">6.</span> В каком городе вы хотели бы провести неделю? Чего вы хотели бы там увидеть?</div><textarea class="answer" placeholder="Например: Я хотел(а) бы провести неделю в Праге. Я хотел(а) бы увидеть несколько музеев и старинных зданий."></textarea></div>
+<div class="task"><div class="prompt"><span class="num">7.</span> Сравните два города, в которых вы были.</div><textarea class="answer" placeholder="Например: Рига меньше Таллина, но архитектура Риги не менее интересная."></textarea></div>
+<details><summary>Примерные ответы</summary>
+<p>1. В моём городе много парков и магазинов, несколько музеев и четыре театра.</p>
+<p>2. В моём районе нет большого торгового центра. Там мало кафе и несколько маленьких магазинов.</p>
+<p>3. Исторический центр моего города интереснее, чем современный район. Архитектура старого города интереснее архитектуры новых кварталов.</p>
+<p>4. Общественный транспорт в моём городе дешевле транспорта в столице. Аренда квартиры, наоборот, дороже аренды квартиры в небольшом городе.</p>
+<p>5. Жизнь в деревне спокойнее жизни в большом городе: там меньше машин, шума и людей.</p>
+<p>6. Я хотел(а) бы провести неделю в Стамбуле. Я хотел(а) бы увидеть несколько мечетей, старинных зданий и красивых улиц.</p>
+<p>7. Таллин меньше Москвы, но исторический центр Таллина очень красивый. В Москве больше музеев и парков.</p>
+</details>
+</section>
+
+<footer>Интерактивный тренажёр: ответы проверяются автоматически. В заданиях с несколькими словами вводите всю форму целиком.</footer>
+</main>
+<script>
+function norm(s){return s.trim().toLocaleLowerCase('ru').replace(/[ё]/g,'е').replace(/\s+/g,' ')}
+function checkSection(id){
+ const sec=document.getElementById(id), fields=[...sec.querySelectorAll('input[data-answer]')];
+ let right=0,filled=0;
+ fields.forEach(f=>{
+  const alternatives=f.dataset.answer.split('|').map(norm), value=norm(f.value);
+  if(value)filled++;
+  if(alternatives.includes(value)){right++;f.style.borderColor='#18794e'}
+  else f.style.borderColor='#b42318';
+ });
+ const fb=sec.querySelector('.feedback');fb.className='feedback '+(right===fields.length?'correct':'wrong');
+ fb.textContent=`Правильно: ${right} из ${fields.length}. Заполнено: ${filled} из ${fields.length}.`+(right===fields.length?' Отлично!':' Проверьте ответы, отмеченные красной рамкой.');
+}
+function resetSection(id){
+ const sec=document.getElementById(id);
+ sec.querySelectorAll('input.answer,textarea.answer').forEach(f=>{f.value='';f.style.borderColor=''});
+ const fb=sec.querySelector('.feedback');if(fb){fb.textContent='';fb.className='feedback'}
+}
+</script>
+</body>
+</html>
