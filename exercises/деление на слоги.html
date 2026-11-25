@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Весёлые переносы</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(135deg, #fff1b8, #ffd6e7, #d8f3ff);
+  color: #34345c;
+}
+
+.container {
+  max-width: 760px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 8px 30px #7865a522;
+}
+
+h1 {
+  text-align: center;
+  color: #8755d9;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  font-size: 17px;
+}
+
+.rules {
+  background: #fff5c9;
+  border: 2px dashed #f3bd42;
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  line-height: 1.7;
+}
+
+.rules strong { color: #d17a00; }
+
+.progress {
+  height: 13px;
+  background: #eee7ff;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #a16cf3, #ff83ad);
+  transition: .3s;
+}
+
+.question {
+  background: #f7f3ff;
+  border-radius: 22px;
+  padding: 22px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.number {
+  color: #9b76d9;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.word {
+  font-size: 34px;
+  font-weight: bold;
+  color: #5535a5;
+  margin: 12px 0 20px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.option {
+  padding: 15px 8px;
+  border: 2px solid #e4dafa;
+  background: white;
+  border-radius: 15px;
+  font-size: 21px;
+  font-weight: bold;
+  color: #514477;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.option:hover {
+  background: #eee5ff;
+  border-color: #a77be8;
+  transform: translateY(-2px);
+}
+
+.option.correct {
+  background: #d8f8e5;
+  border-color: #4acb83;
+  color: #16844a;
+}
+
+.option.wrong {
+  background: #ffe0e0;
+  border-color: #ff7777;
+  color: #c33;
+}
+
+.option:disabled {
+  cursor: default;
+  transform: none;
+}
+
+.feedback {
+  min-height: 28px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.check {
+  display: block;
+  margin: 25px auto 10px;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 30px;
+  background: #8b5de5;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.check:hover { background: #7042cb; }
+
+.result {
+  text-align: center;
+  font-size: 23px;
+  font-weight: bold;
+  color: #8150d1;
+  margin-top: 20px;
+}
+
+.restart {
+  display: none;
+  margin: 15px auto;
+  padding: 13px 28px;
+  border: none;
+  border-radius: 25px;
+  background: #ff91b5;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media(max-width: 480px) {
+  .container { padding: 17px; }
+  .options { grid-template-columns: 1fr; }
+  h1 { font-size: 27px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>🌈 Весёлые переносы 🌈</h1>
+<p class="subtitle">Помоги словам правильно перебраться на новую строчку!</p>
+
+<div class="rules">
+  <strong>📚 Вспомним правила!</strong><br>
+  1. Нельзя оставлять одну букву на строке.<br>
+  2. Нельзя переносить одну букву на другую строку.<br>
+  3. Ь, Ъ и Й нельзя отделять от предыдущей буквы.<br>
+  4. Слова переносят по частям, соблюдая правила переноса.
+</div>
+
+<div class="progress">
+  <div class="progress-bar" id="bar"></div>
+</div>
+
+<div id="quiz"></div>
+
+<div class="result" id="result"></div>
+<button class="restart" id="restart" onclick="restart()">🔄 Играть ещё раз</button>
+
+</div>
+
+<script>
+const tasks = [
+ {
+  word: "ГРУША",
+  options: ["Г-РУША", "ГРУ-ША", "ГРУШ-А"],
+  answer: 1,
+  explanation: "Правильно! Нельзя отделять одну букву от слова."
+ },
+ {
+  word: "АНЯ",
+  options: ["А-НЯ", "АН-Я", "Нельзя переносить"],
+  answer: 2,
+  explanation: "Верно! Нельзя оставлять одну букву на строке."
+ },
+ {
+  word: "РАДОСТЬ",
+  options: ["РА-ДОСТЬ", "РАДО-СТЬ", "РАДОС-ТЬ"],
+  answer: 0,
+  explanation: "Отлично! Мягкий знак остаётся вместе с предыдущей согласной."
+ },
+ {
+  word: "САНОЧКИ",
+  options: ["СА-НОЧКИ", "САНО-ЧКИ", "САНОЧ-КИ"],
+  answer: 0,
+  explanation: "Правильно! Слово можно перенести как са-ночки."
+ },
+ {
+  word: "ГОРОДОК",
+  options: ["Г-ОРОДОК", "ГО-РОДОК", "ГОРОДО-К"],
+  answer: 1,
+  explanation: "Молодец! ГО-РОДОК — правильный перенос."
+ },
+ {
+  word: "СОЛЬ",
+  options: ["СО-ЛЬ", "С-ОЛЬ", "Нельзя переносить"],
+  answer: 2,
+  explanation: "Верно! Односложные слова не переносятся."
+ },
+ {
+  word: "АНАНАС",
+  options: ["А-НАНАС", "АНА-НАС", "АНАНА-С"],
+  answer: 1,
+  explanation: "Правильно! Нельзя оставлять одну букву на строке."
+ },
+ {
+  word: "ПОИГРАЙ",
+  options: ["ПО-ИГРАЙ", "ПОИГ-РАЙ", "ПОИГРА-Й"],
+  answer: 0,
+  explanation: "Отлично! ПО-ИГРАЙ — допустимый вариант переноса."
+ },
+ {
+  word: "ВЕСЕЛЬЕ",
+  options: ["ВЕ-СЕЛЬЕ", "ВЕСЕЛ-ЬЕ", "ВЕСЕЛЬ-Е"],
+  answer: 0,
+  explanation: "Правильно! Мягкий знак нельзя отделять от согласной."
+ },
+ {
+  word: "СЛАДКОЕЖКА",
+  options: ["СЛАД-КОЕЖКА", "СЛАДКО-ЕЖКА", "СЛАДКОЕ-ЖКА"],
+  answer: 0,
+  explanation: "Молодец! Согласные не разделяют произвольно: здесь подходит перенос СЛАД-КОЕЖКА."
+ }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+function render() {
+ const task = tasks[current];
+ document.getElementById("bar").style.width =
+   (current / tasks.length * 100) + "%";
+
+ document.getElementById("quiz").innerHTML = `
+ <div class="question">
+   <div class="number">ЗАДАНИЕ ${current + 1} ИЗ ${tasks.length}</div>
+   <div class="word">${task.word}</div>
+   <div style="font-size:16px;margin-bottom:15px">
+     Как правильно перенести это слово?
+   </div>
+   <div class="options">
+    ${task.options.map((option, i) =>
+      `<button class="option" onclick="choose(${i})">${option}</button>`
+    ).join("")}
+   </div>
+   <div class="feedback" id="feedback"></div>
+ </div>
+ <button class="check" id="next" onclick="next()" style="display:none">
+   ${current === tasks.length - 1 ? "Узнать результат ⭐" : "Следующее слово ➜"}
+ </button>
+ `;
+
+ answered = false;
+}
+
+function choose(index) {
+ if (answered) return;
+ answered = true;
+
+ const task = tasks[current];
+ const buttons = document.querySelectorAll(".option");
+ const feedback = document.getElementById("feedback");
+
+ buttons.forEach((button, i) => {
+   button.disabled = true;
+   if (i === task.answer) button.classList.add("correct");
+   if (i === index && index !== task.answer) {
+     button.classList.add("wrong");
+   }
+ });
+
+ if (index === task.answer) {
+   score++;
+   feedback.innerHTML = "🌟 " + task.explanation;
+   feedback.style.color = "#16844a";
+ } else {
+   feedback.innerHTML = "💡 Не совсем! " + task.explanation;
+   feedback.style.color = "#d36a45";
+ }
+
+ document.getElementById("next").style.display = "block";
+}
+
+function next() {
+ current++;
+
+ if (current >= tasks.length) {
+   document.getElementById("quiz").innerHTML = "";
+   document.getElementById("bar").style.width = "100%";
+
+   let message = score >= 8
+     ? "🏆 Великолепно! Ты настоящий мастер переноса!"
+     : score >= 5
+     ? "🌟 Отличная работа! Продолжай тренироваться!"
+     : "💪 Хорошая попытка! Попробуй ещё раз!";
+
+   document.getElementById("result").innerHTML =
+     message + "<br><br>Твой результат: " + score + " из " + tasks.length;
+
+   document.getElementById("restart").style.display = "block";
+ } else {
+   render();
+ }
+}
+
+function restart() {
+ current = 0;
+ score = 0;
+ document.getElementById("result").innerHTML = "";
+ document.getElementById("restart").style.display = "none";
+ render();
+}
+
+render();
+</script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Весёлый перенос слов</title>
+<style>
+* {box-sizing:border-box}
+body {
+  margin:0;
+  padding:18px;
+  background:linear-gradient(135deg,#ffe6a8,#ffd9e9,#d9edff);
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  color:#42365e;
+}
+.container {
+  max-width:780px;
+  margin:auto;
+  background:white;
+  border-radius:28px;
+  padding:25px;
+  box-shadow:0 8px 30px #66518b25;
+}
+h1 {
+  text-align:center;
+  color:#8755d9;
+  font-size:32px;
+  margin:5px 0;
+}
+.subtitle {
+  text-align:center;
+  color:#888;
+  font-size:17px;
+}
+.section {
+  margin-top:25px;
+  padding:20px;
+  border-radius:22px;
+}
+.purple {background:#f0eaff}
+.pink {background:#fff0f4}
+.yellow {background:#fff6d9}
+.blue {background:#eaf5ff}
+.green {background:#e9f8ed}
+h2 {
+  font-size:22px;
+  margin:0 0 12px;
+  color:#7046b8;
+}
+.instruction {
+  font-size:16px;
+  margin-bottom:15px;
+  line-height:1.5;
+}
+.question {
+  background:white;
+  padding:15px;
+  border-radius:16px;
+  margin:12px 0;
+}
+.word {
+  font-size:23px;
+  font-weight:bold;
+  color:#563a9b;
+  margin-bottom:12px;
+}
+.options {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+button.option {
+  border:2px solid #e5dafb;
+  background:white;
+  color:#554477;
+  padding:10px 14px;
+  border-radius:12px;
+  font-size:17px;
+  cursor:pointer;
+  font-weight:bold;
+}
+button.option:hover {background:#eee6ff}
+button.option.selected {
+  background:#e8ddff;
+  border-color:#8755d9;
+}
+button.option.right {
+  background:#d8f6df;
+  border-color:#4dbd76;
+}
+button.option.wrong {
+  background:#ffe0e0;
+  border-color:#e87575;
+}
+.feedback {
+  font-size:15px;
+  font-weight:bold;
+  margin-top:10px;
+  min-height:20px;
+}
+.check {
+  border:0;
+  background:#8755d9;
+  color:white;
+  padding:13px 24px;
+  border-radius:25px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:12px;
+}
+.check:hover {background:#7042c5}
+input.answer {
+  width:100%;
+  padding:13px;
+  border:2px solid #e1d5fa;
+  border-radius:12px;
+  font-size:18px;
+  margin-top:8px;
+  outline:none;
+}
+input.answer:focus {border-color:#8755d9}
+.result {
+  font-size:19px;
+  font-weight:bold;
+  color:#7042c5;
+  margin-top:12px;
+}
+.tip {
+  background:#fff5ce;
+  border:2px dashed #efc04d;
+  border-radius:17px;
+  padding:15px;
+  line-height:1.6;
+  margin-top:22px;
+}
+@media(max-width:500px) {
+  .container{padding:15px}
+  h1{font-size:26px}
+  .options{flex-direction:column}
+  button.option{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🌈 Весёлый перенос слов!</h1>
+<p class="subtitle">Помоги словам перебраться на новую строчку! ✨</p>
+
+<div class="tip">
+  💡 <b>Помни правила:</b><br>
+  • Нельзя оставлять одну букву на строке.<br>
+  • Ь, Ъ и Й нельзя отделять от предыдущей буквы.<br>
+  • Односложные слова не переносятся.<br>
+  • При переносе нельзя разбивать сочетание букв, которое должно оставаться вместе.
+</div>
+
+<!-- ЗАДАНИЕ 1 -->
+<div class="section purple">
+<h2>🐰 Задание 1. Выбери правильный перенос</h2>
+<div class="instruction">Нажми на правильный вариант.</div>
+<div id="exercise1"></div>
+<div class="result" id="result1"></div>
+</div>
+
+<!-- ЗАДАНИЕ 2 -->
+<div class="section pink">
+<h2>🐸 Задание 2. Можно или нельзя?</h2>
+<div class="instruction">Выбери: можно перенести слово или нельзя.</div>
+<div id="exercise2"></div>
+<div class="result" id="result2"></div>
+</div>
+
+<!-- ЗАДАНИЕ 3 -->
+<div class="section yellow">
+<h2>🦄 Задание 3. Исправь ошибку!</h2>
+<div class="instruction">В каждом слове перенос неправильный. Выбери правильный вариант.</div>
+<div id="exercise3"></div>
+<div class="result" id="result3"></div>
+</div>
+
+<!-- ЗАДАНИЕ 4 -->
+<div class="section blue">
+<h2>🐻 Задание 4. Самостоятельный перенос</h2>
+<div class="instruction">Напиши один правильный вариант переноса каждого слова. Используй дефис.</div>
+<div id="exercise4"></div>
+<button class="check" onclick="checkText()">Проверить ответы ⭐</button>
+<div class="result" id="result4"></div>
+</div>
+
+<!-- ЗАДАНИЕ 5 -->
+<div class="section green">
+<h2>🦋 Задание 5. Найди слова, которые нельзя переносить</h2>
+<div class="instruction">Выбери все слова, которые нельзя переносить.</div>
+<div id="exercise5"></div>
+<button class="check" onclick="checkMulti()">Проверить ⭐</button>
+<div class="result" id="result5"></div>
+</div>
+
+<div style="text-align:center;margin-top:25px">
+  <div style="font-size:35px">🏆 🌟 🎉</div>
+  <h2 style="color:#8755d9">Ты молодец!</h2>
+  <button class="check" onclick="location.reload()">🔄 Начать сначала</button>
+</div>
+
+</div>
+
+<script>
+const data1 = [
+ ["МАЛИНА",["ма-лина","мал-ина","мали-на"],0],
+ ["СОБАКА",["с-обака","со-бака","соба-ка"],1],
+ ["КОШКА",["ко-шка","кош-ка","к-ошка"],1],
+ ["ТЕЛЕФОН",["те-лефон","тел-ефон","телеф-он"],0],
+ ["КАРТИНКА",["кар-тинка","карт-ин-ка","карти-нка"],0],
+ ["ЛАСТОЧКА",["лас-точка","ласточ-ка","ла-сточка"],0]
+];
+
+const data2 = [
+ ["ДОМ",false],
+ ["МАМА",true],
+ ["АНЯ",false],
+ ["СОБАКА",true],
+ ["СОЛЬ",false],
+ ["КОРОВА",true],
+ ["ОСА",false],
+ ["СТОЛ",false]
+];
+
+const data3 = [
+ ["МАЛЬЧИК",["мал-ьчик","маль-чик","мальч-ик"],1],
+ ["МАЙКА",["ма-йка","май-ка","м- айка"],1],
+ ["ПОДЪЕЗД",["под-ъезд","подъ-езд","по-дъезд"],1],
+ ["АНАНАС",["а-нанас","ан-анас","ана-нас"],2],
+ ["УРОК",["у-рок","ур-ок","Нельзя переносить"],2]
+];
+
+function renderChoice(id,data,kind) {
+ const root=document.getElementById(id);
+ root.innerHTML=data.map((item,i)=>`
+ <div class="question" id="${id}_${i}">
+  <div class="word">${i+1}. ${item[0]}</div>
+  <div class="options">
+   ${item[1].map((v,j)=>`
+    <button class="option" onclick="selectAnswer('${id}',${i},${j})">${v}</button>
+   `).join("")}
+  </div>
+  <div class="feedback"></div>
+ </div>`).join("");
+}
+
+let selections={};
+function selectAnswer(id,i,j) {
+ selections[id+'_'+i]=j;
+ const buttons=document.querySelectorAll('#'+id+'_'+i+' button');
+ buttons.forEach((b,k)=>b.classList.toggle('selected',k===j));
+}
+
+function checkChoice(id,data,resultId) {
+ let score=0;
+ data.forEach((item,i)=>{
+  const chosen=selections[id+'_'+i];
+  const card=document.getElementById(id+'_'+i);
+  const buttons=card.querySelectorAll('button');
+  const feedback=card.querySelector('.feedback');
+  buttons.forEach((b,j)=>{
+   b.disabled=true;
+   if(j===item[2]) b.classList.add('right');
+   else if(j===chosen) b.classList.add('wrong');
+  });
+  if(chosen===item[2]) {
+   score++;
+   feedback.textContent='🌟 Правильно!';
+   feedback.style.color='#239452';
+  } else {
+   feedback.textContent='💡 Правильный ответ: '+item[1][item[2]];
+   feedback.style.color='#d15b5b';
+  }
+ });
+ document.getElementById(resultId).textContent=
+  'Твой результат: '+score+' из '+data.length+' ⭐';
+}
+
+renderChoice('exercise1',data1);
+renderChoice('exercise3',data3);
+
+document.getElementById('exercise1').insertAdjacentHTML('afterend',
+ '<button class="check" onclick="checkChoice(\'exercise1\',data1,\'result1\')">Проверить ⭐</button>');
+
+document.getElementById('exercise3').insertAdjacentHTML('afterend',
+ '<button class="check" onclick="checkChoice(\'exercise3\',data3,\'result3\')">Проверить ⭐</button>');
+
+// Задание 2
+const root2=document.getElementById('exercise2');
+root2.innerHTML=data2.map((item,i)=>`
+<div class="question" id="ex2_${i}">
+ <div class="word">${item[0]}</div>
+ <div class="options">
+  <button class="option" onclick="choose2(${i},true)">Можно перенести</button>
+  <button class="option" onclick="choose2(${i},false)">Нельзя переносить</button>
+ </div>
+ <div class="feedback"></div>
+</div>`).join('');
+
+let answers2={};
+function choose2(i,v) {
+ answers2[i]=v;
+ document.querySelectorAll('#ex2_'+i+' button').forEach((b,j)=>
+ b.classList.toggle('selected',j===(v?0:1)));
+}
+function check2() {
+ let score=0;
+ data2.forEach((item,i)=>{
+  const card=document.getElementById('ex2_'+i);
+  const buttons=card.querySelectorAll('button');
+  const feedback=card.querySelector('.feedback');
+  buttons.forEach((b,j)=>{
+   b.disabled=true;
+   if((j===0)===item[1]) b.classList.add('right');
+   else if(answers2[i]!==undefined && (j===0)===answers2[i]) b.classList.add('wrong');
+  });
+  if(answers2[i]===item[1]) {
+   score++;
+   feedback.textContent='🌟 Правильно!';
+  } else feedback.textContent=item[1]?'Можно перенести.':'Нельзя перенести.';
+ });
+ document.getElementById('result2').textContent='Результат: '+score+' из '+data2.length;
+}
+root2.insertAdjacentHTML('afterend',
+ '<button class="check" onclick="check2()">Проверить ⭐</button>');
+
+// Задание 4
+const words4=['ДЕВОЧКА','БЕРЁЗА','СНЕЖИНКА','КАПУСТА','ПОДАРОК','ЧЕРЕПАХА'];
+document.getElementById('exercise4').innerHTML=words4.map((w,i)=>`
+<div class="question">
+ <div class="word">${w}</div>
+ <input class="answer" id="text${i}" placeholder="Например: ма-ли-на">
+</div>`).join('');
+
+const accepted=[
+ ['де-вочка','девоч-ка'],
+ ['бе-рёза','берё-за'],
+ ['сне-жинка','снежин-ка'],
+ ['ка-пуста','капу-ста'],
+ ['по-дарок','пода-рок'],
+ ['че-репаха','черепа-ха']
+];
+
+function checkText() {
+ let score=0;
+ words4.forEach((w,i)=>{
+  const input=document.getElementById('text'+i);
+  const value=input.value.toLowerCase().replaceAll(' ','').replaceAll('ё','е');
+  const ok=accepted[i].some(a=>a.replaceAll('ё','е')===value);
+  input.style.borderColor=ok?'#4dbd76':'#e87575';
+  if(ok) score++;
+ });
+ document.getElementById('result4').textContent=
+ 'Правильных ответов: '+score+' из '+words4.length+' 🌟';
+}
+
+// Задание 5
+const words5=['КОТ','МАШИНА','ОСА','СТОЛ','АНЯ','МАЛИНА','СОЛЬ','ДОМ'];
+const cannot=['КОТ','ОСА','СТОЛ','АНЯ','СОЛЬ','ДОМ'];
+document.getElementById('exercise5').innerHTML=words5.map((w,i)=>`
+<label class="question" style="display:flex;align-items:center;gap:12px;font-size:20px;font-weight:bold">
+ <input type="checkbox" id="multi${i}" style="width:20px;height:20px">
+ ${w}
+</label>`).join('');
+
+function checkMulti() {
+ let score=0;
+ words5.forEach((w,i)=>{
+  const checked=document.getElementById('multi'+i).checked;
+  if(checked===cannot.includes(w)) score++;
+ });
+ document.getElementById('result5').textContent=
+ 'Правильных ответов: '+score+' из '+words5.length+' 🌟';
+}
+</script>
+</body>
+</html>
